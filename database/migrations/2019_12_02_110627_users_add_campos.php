@@ -1,7 +1,5 @@
 <?php
-// ESTO ES PRUEBA CON GIT JORGE
 
-// PRUEBA 2 
 
 use Illuminate\ Database\ Migrations\ Migration;
 use Illuminate\ Database\ Schema\ Blueprint;
