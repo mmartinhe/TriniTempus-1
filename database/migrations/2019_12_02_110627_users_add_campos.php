@@ -1,6 +1,6 @@
 <?php
 
-// ultima
+// PRUEBA CORRECTO
 
 use Illuminate\ Database\ Migrations\ Migration;
 use Illuminate\ Database\ Schema\ Blueprint;
