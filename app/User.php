@@ -16,6 +16,10 @@ class User extends Authenticatable
 	 * patata
      * @var array
      */
+    
+    //prueba zaballos
+    
+    
     protected $fillable = [
         'name', 'apellidos', 'ciudad', 'email', 'password',
     ];
