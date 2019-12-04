@@ -109,12 +109,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Mi cuenta</a>
-                    <a href="https://laracasts.com">Ofertas</a>
-                    <a href="https://laravel-news.com">Solicitar servicios</a>
-                    <a href="https://blog.laravel.com">Mensajes</a>
-                    <a href="https://nova.laravel.com">Multimedia</a>
-                    <a href="https://forge.laravel.com">Buscador</a>
+                    <a href="{{url('/mi_cuenta')}}">Mi cuenta</a>
+                    <a href="{{url('/ofertas')}}">Ofertas</a>
+                    <a href="{{url('/buscador')}}">Buscador</a>
+                    <a href="{{url('/mensajes')}}">Mensajes</a>
+                    <a href="{{url('/multimedia')}}">Multimedia</a>                    
                     <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
                 </div>
             </div>
