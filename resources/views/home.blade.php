@@ -115,7 +115,7 @@
                     <a href="https://blog.laravel.com">Mensajes</a>
                     <a href="https://nova.laravel.com">Multimedia</a>
                     <a href="https://forge.laravel.com">Buscador</a>
-                    <a href="https://https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
+                    <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
                 </div>
             </div>
         </div>
