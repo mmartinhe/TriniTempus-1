@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Vista contacto</title>
+<title>TriniTempus</title>
 </head>
 
 <body>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Vista ofertas</title>
+<title>TriniTempus</title>
 </head>
 
 <body>

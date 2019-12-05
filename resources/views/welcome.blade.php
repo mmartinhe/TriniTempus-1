@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>TriniTempus</title>
+        
+        <!--icono pestaña-->
+         <link rel="ICON"  type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
+        
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -64,6 +68,7 @@
         </style>
     </head>
     <body>
+        
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -81,7 +86,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   TriniTempus
+                   <a id="capa" href='<?=url('/home')?>' ><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
                 </div>
 
                 
