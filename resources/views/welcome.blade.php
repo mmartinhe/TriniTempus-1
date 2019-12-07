@@ -112,7 +112,7 @@
 
             <div class="content">
                 <div id="logo" class="title m-b-md">
-                   <a id="capa" href='<?=url('/home')?>' ><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
+                   <a id="capa" href='<?=url('/')?>' ><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
                     
                 <div id="ultimosServicios" class="links">
                     <a>Ultimos servicios</a>
