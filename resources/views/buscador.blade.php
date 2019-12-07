@@ -90,7 +90,7 @@
         
         .container {
             position: absolute;
-            margin-left: 1550px;
+            margin-left: 1380px;
             margin-top: -280px;
         }
 
@@ -119,7 +119,8 @@
     @endsection @if (Route::has('login'))
     <div class="top-right links">
         @auth
-        <a href="{{ url('/home') }}">Home</a> @else
+        <a href="{{ url('/home') }}">Home</a> 
+        <a href="{{ url('/buscador') }}">Buscador</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>

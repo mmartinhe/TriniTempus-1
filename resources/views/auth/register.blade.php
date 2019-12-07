@@ -69,18 +69,18 @@
         }
         
         #logo {
-            margin-top: -400px;
+            margin-top: -300px;
         }
         #capa_registro{
             position: absolute;
             background-color: #D6F7FC;
             width: 350px;
-            height: 420px;
+            height: 360px;
             border-radius: 20px;
             margin-left: 60px;
             margin-top: -120px;
             padding-left: 20px;
-            padding-top: 20px;
+            padding-top: 5px;
             font-size: 20px;
             font-weight: bold;
             color:dimgray;         
@@ -110,8 +110,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
-<br>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

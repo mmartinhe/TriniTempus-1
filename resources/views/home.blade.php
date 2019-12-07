@@ -67,8 +67,8 @@
         }
         .container{
             position: absolute;
-            margin-left: 1550px;
-            margin-top: -850px;
+            margin-left: 1380px;
+            margin-top: -480px;
 
         }
 
@@ -78,40 +78,33 @@
 
 <body>
 @extends('layouts.app')
-<!--------------------------------------------usuario logado y salir--------------------------------------------->    
+<!---------------------------------------usuario logado y salir--------------------------------------------->    
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8" >
-            <div class="card" >
-                <div class="card-header" ></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"></div>
 
-                <div class="card-body" >
-                    @if (session('status'))
+                    <div class="card-body">
+                        @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
-
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                        <a href="{{ url('/home') }}">Home</a> 
-                    @else
-                        <a href="{{ route('login') }}">Logarse</a> 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Registrarse</a> 
-                    @endif 
-                @endauth
-            </div>
-        @endif
+    @endsection @if (Route::has('login'))
+    <div class="top-right links">
+        @auth
+        <a href="{{ url('/home') }}">Home</a>@else
+        <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
+        <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
+    </div>
+    @endif
 <!-------------------------------------------contenido---------------------------------------------->
         <div class="content">
             <div class="title m-b-md">

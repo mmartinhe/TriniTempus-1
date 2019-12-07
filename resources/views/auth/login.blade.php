@@ -68,7 +68,7 @@
         }
         
         #logo {
-            margin-top: -400px;
+            margin-top: -360px;
         }
         #capa_logueo{
             position: absolute;
@@ -76,14 +76,13 @@
             width: 300px;
             height: 300px;
             border-radius: 20px;
-            margin-left: 630px;
-            margin-top: -450px;
+            margin-left: 550px;
+            margin-top: -400px;
             padding-left: 100px;
             padding-top: 20px;
             font-size: 20px;
             font-weight: bold;
-             color:dimgray;
-           
+            color:dimgray;         
         }
 
     </style>

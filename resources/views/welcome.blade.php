@@ -73,23 +73,23 @@
             #ultimosServicios{
                 position: relative;
                 font-size: 50px;
-                width: 700px;
-                height: 300px;
+                width: 650px;
+                height: 290px;
                 background-color: #D6F7FC ;
                 border-radius: 20px;
-                margin-left: -500px;
+                margin-left: -450px;
                 
             }
 
             #masSolicitados{
                 position: absolute;
                 font-size: 50px;
-                width: 700px;
-                height: 300px;
+                width: 650px;
+                height: 290px;
                 background-color: #D6F7FC ;
                 border-radius: 20px;
                 margin-left: 300px;
-                margin-top: -300px;
+                margin-top: -290px;
             }
         </style>
     </head>
@@ -99,7 +99,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/welcome') }}">Welcome</a>
                     @else
                         <a href="{{ route('login') }}">Logarse</a>
 
