@@ -16,7 +16,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #A0E5EB;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -65,6 +65,32 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            
+            #logo{
+                margin-top: 0px;
+            }
+            
+            #ultimosServicios{
+                position: relative;
+                font-size: 50px;
+                width: 700px;
+                height: 300px;
+                background-color: #D6F7FC ;
+                border-radius: 20px;
+                margin-left: -500px;
+                
+            }
+
+            #masSolicitados{
+                position: absolute;
+                font-size: 50px;
+                width: 700px;
+                height: 300px;
+                background-color: #D6F7FC ;
+                border-radius: 20px;
+                margin-left: 300px;
+                margin-top: -300px;
+            }
         </style>
     </head>
     <body>
@@ -85,11 +111,16 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div id="logo" class="title m-b-md">
                    <a id="capa" href='<?=url('/home')?>' ><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
+                    
+                <div id="ultimosServicios" class="links">
+                    <a>Ultimos servicios</a>
                 </div>
-
-                
+              <div id="masSolicitados" class="links">
+                    <a>Servicios mas solicitados</a>
+                </div>
+            </div>         
             </div>
         </div>
     </body>
