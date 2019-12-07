@@ -80,7 +80,7 @@
 @extends('layouts.app')
 <!--------------------------------------------usuario logado y salir--------------------------------------------->    
 @section('content')
-<div class="container" id="usuarioLogado">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8" >
             <div class="card" >
