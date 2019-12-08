@@ -41,8 +41,12 @@ Route::get( '/buscador', function () {return view( 'buscador' );} );
 Route::post('/vistaModificarMisDatos', 'UsuariosController@vistaModificarMisDatos');
 Route::post('/modificarMisDatos', 'UsuariosController@modificarMisDatos');
 //--------------------------------------------------
-//RUTA PARA MODIFICAR MIS DATOS
+//RUTA PARA DARSE DE BAJA
 Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
+//----------------------------------------
+//RUTAS DE FOTO DE PERFIL
+Route::get('/profile', 'UsuariosController@profile');
+Route::post('/updateprofile', 'UsuariosController@updateProfile');
 
 
 

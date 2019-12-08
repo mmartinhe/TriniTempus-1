@@ -149,18 +149,38 @@
         }
         
         #tiempo {
-            margin-left: -350px;
+            margin-left: -30px;
         }
         
         #btnModificarDatos {
             position: fixed;
-            margin-left: 150px;
-            top: 410px;
+            margin-left: 130px;
+            top: 450px;
+            background-color: #A0E5EB;
         }
         
         #btnBaja {
             position: fixed;
-            margin-left: 350px;
+            margin-left: 210px;
+            margin-top: 25px;
+            background-color: #A0E5EB;
+        }
+        
+        #foto{
+            margin-left: 840px;
+            margin-top: -220px;
+            
+        }
+        #foto_perfil{
+            border-radius: 20px;
+        }
+        
+        #btn_modificar{
+            position: fixed;
+            border-radius: 20px;
+            margin-left: 90px;
+            margin-top: 25px;
+            background-color: #A0E5EB;
         }
 
     </style>
@@ -200,11 +220,12 @@
         <div id="logo" class="title m-b-md">
             <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
         </div>
-        
-        <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
-            <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
-            <div id="mis_datos" class="links">
-                MIS DATOS
+
+
+        <div id="mis_datos" class="links">
+            MIS DATOS
+            <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
+                <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
                 <div id="datos_usuario">
                     <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
                     <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
@@ -216,17 +237,20 @@
                     <div>
                         <input type="submit" value="Modificar datos" id="btnModificarDatos">
                     </div>
-                    <div>
-                        <input type="submit" value="Darse de baja" id="btnBaja">
+                    <div id="tiempo">
+                        TIEMPO: 100 MINUTOS
                     </div>
+                    <div id="foto"><img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px' /></div>
                 </div>
-
-
-                <div id="tiempo">
-                    TIEMPO: 100 MINUTOS
-                </div>
-            </div>
-        </form>
+            </form>
+            <form>
+                <div>
+                    <input type="submit" value="Darse de baja" id="btnBaja">
+                </div>              
+            </form>
+                  <a href='<?=url('profile')?>'><button id="btn_modificar">Modificar Foto</button></a> 
+        </div>
+        
         <div id="mis_mensajes" class="links">
             MIS MENSAJES
         </div>
