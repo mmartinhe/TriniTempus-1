@@ -73,7 +73,6 @@
             height: 250px;
         }
         
-        
         #capa_registro {
             position: absolute;
             background-color: #D6F7FC;
@@ -91,7 +90,77 @@
         .container {
             position: absolute;
             margin-left: 1380px;
-            margin-top: -280px;
+            margin-top: -740px;
+        }
+        
+        /*--------------------------------------------------------------------------*/
+        #mis_datos {
+            position: relative;
+            font-size: 20px;
+            width: 650px;
+            height: 250px;
+            background-color: #D6F7FC;
+            border-radius: 20px;
+            margin-left: 50px;
+            margin-top: -50px;
+        }
+        
+        #mis_mensajes {
+            position: relative;
+            font-size: 20px;
+            width: 650px;
+            height: 250px;
+            background-color: #D6F7FC;
+            border-radius: 20px;
+            margin-left: 50px;
+            margin-top: 30px;
+        }
+        
+        #mis_archivos {
+            position: relative;
+            font-size: 20px;
+            width: 650px;
+            height: 250px;
+            background-color: #D6F7FC;
+            border-radius: 20px;
+            margin-left: 780px;
+            margin-top: -530px;
+        }
+        
+        #mis_servicios {
+            position: relative;
+            font-size: 20px;
+            width: 650px;
+            height: 250px;
+            background-color: #D6F7FC;
+            border-radius: 20px;
+            margin-left: 780px;
+            margin-top: 30px;
+        }
+        
+        #datos_usuario {
+            margin-left: -350px;
+            margin-top: -30px;
+        }
+        
+        input {
+            border-radius: 20px;
+            padding-left: 10px;
+        }
+        
+        #tiempo {
+            margin-left: -350px;
+        }
+        
+        #btnModificarDatos {
+            position: fixed;
+            margin-left: 150px;
+            top: 410px;
+        }
+        
+        #btnBaja {
+            position: fixed;
+            margin-left: 350px;
         }
 
     </style>
@@ -119,7 +188,7 @@
     @endsection @if (Route::has('login'))
     <div class="top-right links">
         @auth
-        <a href="{{ url('/home') }}">Home</a> 
+        <a href="{{ url('/home') }}">Home</a>
         <a href="{{ url('/mi_cuenta') }}">Mi cuenta</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
@@ -131,20 +200,46 @@
         <div id="logo" class="title m-b-md">
             <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
         </div>
-            <div id="mis_datos" class="links">
-                
-            </div>
-            <div id="mis_archivos" class="links">
-                
-            </div>
-            <div id="mis_mensajes" class="links">
-                
-            </div>
-            <div id="mis_servicios" class="links">
-                
-            </div>
         
+        <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
+            <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
+            <div id="mis_datos" class="links">
+                MIS DATOS
+                <div id="datos_usuario">
+                    <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
+                    <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
+                    </p>
+                    <p id="correo">E-mail:&nbsp&nbsp<input name="email" placeholder="{{ auth()->user()->email}}"></input>
+                    </p>
+                    <p id="ciudad">Ciudad:&nbsp&nbsp<input name="ciudad" placeholder="{{ auth()->user()->ciudad}}"></input>
+                    </p>
+                    <div>
+                        <input type="submit" value="Modificar datos" id="btnModificarDatos">
+                    </div>
+                    <div>
+                        <input type="submit" value="Darse de baja" id="btnBaja">
+                    </div>
+                </div>
 
-        VISTA MI CUENTA
+
+                <div id="tiempo">
+                    TIEMPO: 100 MINUTOS
+                </div>
+            </div>
+        </form>
+        <div id="mis_mensajes" class="links">
+            MIS MENSAJES
+        </div>
+
+        <div id="mis_archivos" class="links">
+            MIS ARCHIVOS
+        </div>
+
+        <div id="mis_servicios" class="links">
+            MIS SERVICIOS
+        </div>
+
+    </div>
+
 </body>
 </html>

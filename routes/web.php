@@ -11,58 +11,52 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get( '/', function () {
+    return view( 'welcome' );
+} );
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
 //--------------------------------------------------
-//RUTASA PARA LOS CAMBIOS DE VISTA 
+//RUTAS PARA LOS CAMBIOS DE VISTA 
 
-Route::get('/mi_cuenta', function(){
-    
-    return view('mi_cuenta');
-    
-});
+Route::get( '/mi_cuenta', function () { return view( 'mi_cuenta' ); } );
 
-Route::get('/contacto', function(){
-    
-    return view('contacto');
-    
-});
+Route::get( '/contacto', function () {return view( 'contacto' );} );
 
-Route::get('/ofertas', function(){
-    
-    return view('ofertas');
-    
-});
+Route::get( '/ofertas', function () {return view( 'ofertas' );} );
 
-Route::get('/mensajes', function(){
-    
-    return view('mensajes');
-    
-});
+Route::get( '/mensajes', function () {return view( 'mensajes' );} );
 
-Route::get('/multimedia', function(){
-    
-    return view('multimedia');
-    
-});
+Route::get( '/multimedia', function () {return view( 'multimedia' );} );
 
-Route::get('/administrador', function(){
-    
-    return view('administrador');
-    
-});
+Route::get( '/administrador', function () {return view( 'administrador' );} );
 
-Route::get('/buscador', function(){
-    
-    return view('buscador');
-    
-});
+Route::get( '/buscador', function () {return view( 'buscador' );} );
+
+//--------------------------------------------------
+//RUTA PARA MODIFICAR MIS DATOS
+Route::post('/vistaModificarMisDatos', 'UsuariosController@vistaModificarMisDatos');
+Route::post('/modificarMisDatos', 'UsuariosController@modificarMisDatos');
+//--------------------------------------------------
+//RUTA PARA MODIFICAR MIS DATOS
+Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
