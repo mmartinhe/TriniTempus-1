@@ -110,7 +110,7 @@
                             <button id="btnActualizar" type='submit' class='btn btn-primary'>Actualizar imagen de perfil</button>
                         </form>
                         <br/><br/>
-                        <a href='<?=url('/ mi_cuenta ')?>'><button id="btnVolver" type='submit' class='btn btn-primary'>Volver sin Actualizar imagen de perfil</button></a>
+                        <a href='<?=url('/mi_cuenta ')?>'><button id="btnVolver" type='submit' class='btn btn-primary'>Volver sin Actualizar imagen de perfil</button></a>
                     </section>
 
                 </div>
