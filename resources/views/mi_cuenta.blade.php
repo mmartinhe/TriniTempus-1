@@ -127,9 +127,9 @@
 
         <div class="container-fluid tex-center py-9 ">
             <div class="row">
-                <div class="col-5 " id="capa_datos">
+                <div class="col-sm-12 col-md-6 col-lg-5 " id="capa_datos">
                     <div class="row">
-                        <div class="col-6 ">
+                        <div class="col-sm-12 col-md-12 col-lg-6 ">
                             <div id="mis_datos" class="links">
                                 <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                     <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
@@ -152,7 +152,7 @@
                                 <h4>TIEMPO: 100 MINUTOS</h4>
                             </div>
                         </div>
-                        <div class="col-6  ">
+                        <div class="col-sm-12 col-md-6 col-lg-6  ">
                             <div id="foto">
                                 <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
                             </div>
