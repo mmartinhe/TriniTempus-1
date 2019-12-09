@@ -68,6 +68,16 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+        
+        /*-----------------------------------------*/
+         
+        #capa_datos{
+            border-radius: 20px;
+                      
+        }
+        #foto{
+            left:50px;
+        }
 
     </style>
 </head>
@@ -86,7 +96,61 @@
     <div class="title m-b-md">
         <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
     </div>
-    <h1>VISTA MI CUENTA</h1>
+
+    <div class="container tex-center py-5 ">
+       <div class="row">
+          <div class="col-6 bg-primary" id="capa_Misdatos">
+            <div class="col-3 bg-success" id="capa_datos">
+               <div id="mis_datos" class="links">
+                <b>MIS DATOS</b>
+                <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
+                    <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
+                    <div id="datos_usuario">
+                        <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
+                        <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
+                        </p>
+                        <p id="correo">E-mail:&nbsp&nbsp<input name="email" placeholder="{{ auth()->user()->email}}"></input>
+                        </p>
+                        <p id="ciudad">Ciudad:&nbsp&nbsp<input name="ciudad" placeholder="{{ auth()->user()->ciudad}}"></input>
+                        </p>
+                        <div>
+                            <input type="submit" value="Modificar datos" id="btnModificarDatos">
+                        </div>
+                        <div id="tiempo">
+                            TIEMPO: 100 MINUTOS
+                        </div>
+                    </div>
+                    </form>
+                </div>
+    
+                    <div id="foto"><img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px' /></div>
+                
+            
+            <form>
+                <div>
+                    <input type="submit" value="Darse de baja" id="btnBaja">
+                </div>              
+            </form>
+                  <a href='<?=url('profile')?>'><button id="btn_modificar">Modificar Foto</button></a> 
+        </div>
+           </div>  
+           
+           
+           
+           <div class="col-6 bg-success">
+           <p>MIS MENSAJES</p>
+           </div>
+        </div>
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
