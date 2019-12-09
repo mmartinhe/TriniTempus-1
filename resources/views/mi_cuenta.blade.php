@@ -156,7 +156,7 @@
                             <div id="foto">
                                 <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
                             </div>
-                            <a href='<?=url(' profile ')?>'><button id="btn_modificarFoto">Modificar Foto</button></a>
+                            <a href='<?=url('profile')?>'><button id="btn_modificarFoto">Modificar Foto</button></a>
                             <form>
                                 <div>
                                     <input type="submit" value="Darse de baja" id="btnBaja">

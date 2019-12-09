@@ -68,21 +68,21 @@
         }
         
         #logo {
-            margin-top: -360px;
+            margin-top: -300px;
         }
-        #capa_logueo{
+        
+        #capa_logueo {
             position: absolute;
             background-color: #D6F7FC;
             width: 300px;
             height: 300px;
             border-radius: 20px;
-            margin-left: 550px;
-            margin-top: -400px;
-            padding-left: 100px;
+            margin-left: 100px;
+            margin-top: -100px;
             padding-top: 20px;
             font-size: 20px;
             font-weight: bold;
-            color:dimgray;         
+            color: dimgray;
         }
 
     </style>
@@ -103,14 +103,12 @@
         <div class="content">
             <div id="logo" class="title m-b-md">
                 <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a> @section('content')
-
-
-                <div id="capa_logueo"class="container">
+                <div id="capa_logueo" class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">{{ __('Login') }}</div>
-<br>
+                                <br>
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -121,8 +119,8 @@
                                             <div class="col-md-6">
                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> @error('email')
                                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                                                 @enderror
                                             </div>
                                             <br>
@@ -134,8 +132,8 @@
                                             <div class="col-md-6">
                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"> @error('password')
                                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                                                 @enderror
                                             </div>
                                         </div>
@@ -146,9 +144,11 @@
                                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old( 'remember') ? 'checked' : '' }}>
 
                                                     <label class="form-check-label" for="remember">
-                                        {{ __('Recordarme') }}
-                                    </label>
+                            {{ __('Recordarme') }}
+                        </label>
                                                 
+
+
 
                                                 </div>
                                             </div>
@@ -158,12 +158,12 @@
                                             <div class="col-md-8 offset-md-4">
                                                 <br>
                                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Entrar') }}
-                                </button>
+                        {{ __('Entrar') }}
+                    </button>
                                                 @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Perdiste la contraseña?') }}
-                                    </a>
+                            {{ __('Perdiste la contraseña?') }}
+                        </a>
                                                 @endif
                                             </div>
                                         </div>
@@ -174,8 +174,6 @@
                     </div>
                 </div>
                 @endsection
-            </div>
-        </div>
-    </div>
+
 </body>
 </html>

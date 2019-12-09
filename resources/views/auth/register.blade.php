@@ -90,7 +90,7 @@
 </head>
 
 <body>
-@extends('layouts.app')
+@extends( 'layouts.app' )
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
         <div class="top-right links">
@@ -104,7 +104,7 @@
         <div class="content">
             <div id="logo" class="title m-b-md">
                 <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a> 
-
+        
 @section('content')
 <div id="capa_registro" class="container">
     <div class="row justify-content-center">
