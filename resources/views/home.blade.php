@@ -65,11 +65,11 @@
         .m-b-md {
             margin-bottom: 30px;
         }
-        .container{
+        
+        .container {
             position: absolute;
             margin-left: 1380px;
             margin-top: -480px;
-
         }
 
     </style>
@@ -77,11 +77,9 @@
 </head>
 
 <body>
-@extends('layouts.app')
-<!---------------------------------------usuario logado y salir--------------------------------------------->    
-@section('content')
-    
-    @endsection @if (Route::has('login'))
+    @extends('layouts.app')
+    <!---------------------------------------usuario logado y salir--------------------------------------------->
+    @section('content') @endsection @if (Route::has('login'))
     <div class="top-right links">
         @auth
         <a href="{{ url('/home') }}">Home</a>@else
@@ -89,25 +87,21 @@
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
     @endif
-<!-------------------------------------------contenido---------------------------------------------->
-        <div class="content">
-            <div class="title m-b-md">
-                <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
-            </div>
-
-            <div class="links">
-                <a href="{{url('/mi_cuenta')}}">Mi cuenta</a>
-                <a href="{{url('/ofertas')}}">Ofertas</a>
-                <a href="{{url('/buscador')}}">Buscador</a>
-                <a href="{{url('/mensajes')}}">Mensajes</a>
-                <a href="{{url('/multimedia')}}">Multimedia</a>
-                <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
-            </div>
+    <!-------------------------------------------contenido---------------------------------------------->
+    <div class="content">
+        <div class="title m-b-md">
+            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
         </div>
+
+        <div class="links">
+            <a href="{{url('/mi_cuenta')}}">Mi cuenta</a>
+        
+            <a href="{{url('/ofertas')}}">Ofertas</a>
+            <a href="{{url('/buscador')}}">Buscador</a>
+            <a href="{{url('/mensajes')}}">Mensajes</a>
+            <a href="{{url('/multimedia')}}">Multimedia</a>
+            <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
+        </div>
+    </div>
 </body>
 </html>
-
-
-
-
-

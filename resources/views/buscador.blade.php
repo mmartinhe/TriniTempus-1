@@ -67,8 +67,8 @@
         .m-b-md {
             margin-bottom: 30px;
         }
-
-
+        
+        /*---------------------------------------------------------------*/
 
     </style>
 </head>
@@ -83,12 +83,22 @@
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
     @endif
-<div class="content">
-    <div class="title m-b-md">
-        <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+    <div class="content">
+        <div class="title m-b-md">
+            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+        </div>
+        <h1>VISTA BUSCADOR</h1>
+
+
+
+
+
+
+
+
+
+
     </div>
-    <h1>VISTA BUSCADOR</h1>
-</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

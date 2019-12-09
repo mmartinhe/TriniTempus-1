@@ -8,7 +8,7 @@
 
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 
@@ -69,71 +69,18 @@
             margin-bottom: 30px;
         }
         
-        #encabezado {
-            margin-top: -80px;
-            width: 350px;
-            height: 250px;
-        }
-        
-        
-        #capa_btn{
-            position: absolute;
-            background-color: #D6F7FC;
-            width: 350px;
-            height: 420px;
-            border-radius: 20px;
-            margin-left: 560px;
-            margin-top: -20px;
-            padding-left: 20px;
-            padding-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        .container {
-            position: absolute;
-            margin-left: 1380px;
-            margin-top: -260px;
-        }
-        
-        #btnVolver{
-            margin-top: 100px;
-            background-color: #A0E5EB;
-        }
-        button{
-            border-radius: 20px;
-            background-color: #A0E5EB;
-        }
-        
-       
+        /*---------------------------------------------------------------*/
 
     </style>
 </head>
 
 <body>
-    @extends('layouts.app') @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"></div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection @if (Route::has('login'))
+    @if (Route::has('login'))
     <div class="top-right links">
         @auth
-        <a href="{{ url('/home') }}">Home</a> 
-        <a href="{{ url('/buscador') }}">Cambiar foto de perfil</a>@else
+        <a href="{{ url('/home') }}">Home</a>
+        <a href="{{ url('/profile') }}">Cambiar foto de perfil</a>
+        <a href="{{ url('/mi_cuenta') }}">Mi cuenta</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
@@ -141,30 +88,40 @@
     <br><br><br>
     <!-------------------------------------------contenido---------------------------------------------->
     <div class="content">
-        <div id="logo" class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
+        <div class="title m-b-md">
+            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
-        
-        <section id="capa_btn">
-        <h1 id="titulo">Cambiar imagen de perfil</h1>
-            <form id="formulario" method='post' action='{{url("updateprofile")}}' enctype='multipart/form-data'>
-            {{csrf_field()}}
-                
-            <div class='form-group'>
-                <label id="aviso" for='image'>Selecciona una imagen: </label>
-                <br/><br/>
-                <input type="file" name="image"/>
-                <div class='text-danger'>{{$errors->first('image')}}</div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <section id="capa_btn">
+                        <h1 id="titulo">Cambiar imagen de perfil</h1>
+                        <form id="formulario" method='post' action='{{url("updateprofile")}}' enctype='multipart/form-data'>
+                            {{csrf_field()}}
+
+                            <div class='form-group'>
+                                <label id="aviso" for='image'>Selecciona una imagen: </label>
+                                <br/><br/>
+                                <input type="file" name="image"/>
+                                <div class='text-danger'>{{$errors->first('image')}}</div>
+                            </div>
+                            <br/><br/>
+                            <button id="btnActualizar" type='submit' class='btn btn-primary'>Actualizar imagen de perfil</button>
+                        </form>
+                        <br/><br/>
+                        <a href='<?=url('/ mi_cuenta ')?>'><button id="btnVolver" type='submit' class='btn btn-primary'>Volver sin Actualizar imagen de perfil</button></a>
+                    </section>
+
+                </div>
             </div>
-            <br/><br/><br/>
-            <button id="btnActualizar" type='submit' class='btn btn-primary'>Actualizar imagen de perfil</button>
-            </form>
-           
-            <a href='<?=url('/mi_cuenta ')?>'><button id="btnVolver" type='submit' class='btn btn-primary'>Volver sin Actualizar imagen de perfil</button></a>
-        </section>
-        
-           
+        </div>
     </div>
-       
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
 </body>
 </html>
