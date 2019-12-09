@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>TriniTempus</title>
 
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
-
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -66,85 +67,32 @@
         .m-b-md {
             margin-bottom: 30px;
         }
-        
-        #encabezado {
-            margin-top: -80px;
-            width: 350px;
-            height: 250px;
-        }
-        
-        
-        #capa_registro {
-            position: absolute;
-            background-color: #D6F7FC;
-            width: 350px;
-            height: 420px;
-            border-radius: 20px;
-            margin-left: 60px;
-            margin-top: -120px;
-            padding-left: 20px;
-            padding-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        .container {
-            position: absolute;
-            margin-left: 1380px;
-            margin-top: -280px;
-        }
+
+
 
     </style>
 </head>
 
 <body>
-    @extends('layouts.app') @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"></div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection @if (Route::has('login'))
+    @if (Route::has('login'))
     <div class="top-right links">
         @auth
-        <a href="{{ url('/home') }}">Home</a> 
+        <a href="{{ url('/home') }}">Home</a>
         <a href="{{ url('/buscador') }}">Buscador</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
     @endif
-    <br><br><br>
-    <!-------------------------------------------contenido---------------------------------------------->
-    <div class="content">
-        <div id="logo" class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
-        </div>
-            <div id="mis_datos" class="links">
-                
-            </div>
-            <div id="mis_archivos" class="links">
-                
-            </div>
-            <div id="mis_mensajes" class="links">
-                
-            </div>
-            <div id="mis_servicios" class="links">
-                
-            </div>
-        
-
-        VISTA BUSCADOR
+<div class="content">
+    <div class="title m-b-md">
+        <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+    </div>
+    <h1>VISTA BUSCADOR</h1>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
 </body>
 </html>

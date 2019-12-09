@@ -8,7 +8,9 @@
 
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
-
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -96,7 +98,14 @@
         
         #btnVolver{
             margin-top: 100px;
+            background-color: #A0E5EB;
         }
+        button{
+            border-radius: 20px;
+            background-color: #A0E5EB;
+        }
+        
+       
 
     </style>
 </head>

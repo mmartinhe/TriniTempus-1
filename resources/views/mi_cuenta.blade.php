@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>TriniTempus</title>
 
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -66,204 +68,30 @@
         .m-b-md {
             margin-bottom: 30px;
         }
-        
-        #encabezado {
-            margin-top: -80px;
-            width: 350px;
-            height: 250px;
-        }
-        
-        #capa_registro {
-            position: absolute;
-            background-color: #D6F7FC;
-            width: 350px;
-            height: 420px;
-            border-radius: 20px;
-            margin-left: 60px;
-            margin-top: -120px;
-            padding-left: 20px;
-            padding-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        .container {
-            position: absolute;
-            margin-left: 1380px;
-            margin-top: -740px;
-        }
-        
-        /*--------------------------------------------------------------------------*/
-        #mis_datos {
-            position: relative;
-            font-size: 20px;
-            width: 650px;
-            height: 250px;
-            background-color: #D6F7FC;
-            border-radius: 20px;
-            margin-left: 50px;
-            margin-top: -50px;
-        }
-        
-        #mis_mensajes {
-            position: relative;
-            font-size: 20px;
-            width: 650px;
-            height: 250px;
-            background-color: #D6F7FC;
-            border-radius: 20px;
-            margin-left: 50px;
-            margin-top: 30px;
-        }
-        
-        #mis_archivos {
-            position: relative;
-            font-size: 20px;
-            width: 650px;
-            height: 250px;
-            background-color: #D6F7FC;
-            border-radius: 20px;
-            margin-left: 780px;
-            margin-top: -530px;
-        }
-        
-        #mis_servicios {
-            position: relative;
-            font-size: 20px;
-            width: 650px;
-            height: 250px;
-            background-color: #D6F7FC;
-            border-radius: 20px;
-            margin-left: 780px;
-            margin-top: 30px;
-        }
-        
-        #datos_usuario {
-            margin-left: -350px;
-            margin-top: -30px;
-        }
-        
-        input {
-            border-radius: 20px;
-            padding-left: 10px;
-        }
-        
-        #tiempo {
-            margin-left: -30px;
-        }
-        
-        #btnModificarDatos {
-            position: fixed;
-            margin-left: 130px;
-            top: 450px;
-            background-color: #A0E5EB;
-        }
-        
-        #btnBaja {
-            position: fixed;
-            margin-left: 210px;
-            margin-top: 25px;
-            background-color: #A0E5EB;
-        }
-        
-        #foto{
-            margin-left: 840px;
-            margin-top: -220px;
-            
-        }
-        #foto_perfil{
-            border-radius: 20px;
-        }
-        
-        #btn_modificar{
-            position: fixed;
-            border-radius: 20px;
-            margin-left: 90px;
-            margin-top: 25px;
-            background-color: #A0E5EB;
-        }
 
     </style>
 </head>
 
 <body>
-    @extends('layouts.app') @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"></div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endsection @if (Route::has('login'))
+    @if (Route::has('login'))
     <div class="top-right links">
         @auth
         <a href="{{ url('/home') }}">Home</a>
-        <a href="{{ url('/mi_cuenta') }}">Mi cuenta</a>@else
+        <a href="{{ url('/buscador') }}">Mi cuenta</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
     @endif
-    <br><br><br>
-    <!-------------------------------------------contenido---------------------------------------------->
-    <div class="content">
-        <div id="logo" class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
-        </div>
-
-
-        <div id="mis_datos" class="links">
-            MIS DATOS
-            <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
-                <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
-                <div id="datos_usuario">
-                    <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
-                    <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
-                    </p>
-                    <p id="correo">E-mail:&nbsp&nbsp<input name="email" placeholder="{{ auth()->user()->email}}"></input>
-                    </p>
-                    <p id="ciudad">Ciudad:&nbsp&nbsp<input name="ciudad" placeholder="{{ auth()->user()->ciudad}}"></input>
-                    </p>
-                    <div>
-                        <input type="submit" value="Modificar datos" id="btnModificarDatos">
-                    </div>
-                    <div id="tiempo">
-                        TIEMPO: 100 MINUTOS
-                    </div>
-                    <div id="foto"><img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px' /></div>
-                </div>
-            </form>
-            <form>
-                <div>
-                    <input type="submit" value="Darse de baja" id="btnBaja">
-                </div>              
-            </form>
-                  <a href='<?=url('profile')?>'><button id="btn_modificar">Modificar Foto</button></a> 
-        </div>
-        
-        <div id="mis_mensajes" class="links">
-            MIS MENSAJES
-        </div>
-
-        <div id="mis_archivos" class="links">
-            MIS ARCHIVOS
-        </div>
-
-        <div id="mis_servicios" class="links">
-            MIS SERVICIOS
-        </div>
-
+<div class="content">
+    <div class="title m-b-md">
+        <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
     </div>
-
+    <h1>VISTA MI CUENTA</h1>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
 </body>
 </html>
