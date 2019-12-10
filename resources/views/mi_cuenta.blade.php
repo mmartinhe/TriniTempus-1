@@ -99,8 +99,9 @@
         }
         
         #btnBaja {
-            margin-top: 50px;
+            margin-top: 30px;
             border-radius: 20px;
+            margin-bottom: 10px;
         }
         
         #btnModificarDatos {
