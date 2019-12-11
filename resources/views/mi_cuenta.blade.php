@@ -182,14 +182,19 @@
                     
                     
                         <div class="row bg-success ">
-                            <p>ENVIADOS</p>
+                            <p>ENVIADOS:</p>
+                            @foreach($todosLibros as $item) <!--// el todosLibros es la variable que creas en librocontroller donde guardas todos los libros de la BD -->
+
+		                    <h2><b><i>Id:{{$item -> id}} // {{$item -> titulo}} , por {{$item -> autor}} </i></b></h2>
+		                    <br>
+		                    @endforeach
                         </div>
                         <div class="row-1 bg-primary ">
                             <p></p>
                         </div>
                     
                         <div class="row bg-success ">
-                            <p>RECIBIDOS</p>
+                            <p>RECIBIDOS:</p>
                         </div>
                       
                     
