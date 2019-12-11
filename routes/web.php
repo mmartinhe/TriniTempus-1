@@ -47,6 +47,9 @@ Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
 //RUTAS DE FOTO DE PERFIL
 Route::get('/profile', 'UsuariosController@profile');
 Route::post('/updateprofile', 'UsuariosController@updateProfile');
+//----------------------------------------
+//RUTAS PARA MOSTRAR TODOS LOS LIBROS
+Route::get('/mostrarTodos', 'LibroController@mostrarTodos');
 
 
 
