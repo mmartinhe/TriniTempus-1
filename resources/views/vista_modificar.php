@@ -64,6 +64,6 @@
         <br>
     </form>
     <br>
-    <form action="{{url('/')}}" method="post" id="btnVolver">
+    <form action="<?=url('profile')?>" method="post" id="btnVolver">
         <input type="submit" name="botonVolver" value="volver">
     </form>

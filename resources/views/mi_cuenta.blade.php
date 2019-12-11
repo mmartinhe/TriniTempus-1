@@ -134,7 +134,7 @@
                             <div id="mis_datos" class="links">
                                 <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                     <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
-                                    <div id="datos_usuario">
+                                    <div id="datos_usuario" class="mt-2">
                                         <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
                                         <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
                                         </p>
