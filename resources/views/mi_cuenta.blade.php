@@ -73,7 +73,7 @@
         #capa_datos {
             border-radius: 20px;
             background-color: #D6F7FC;
-            margin-left: 55px;
+            /*margin-left: 55px;*/
         }
         
         p {
@@ -131,6 +131,8 @@
                 <div class="col-sm-12 col-md-6 col-lg-5 " id="capa_datos">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6 ">
+                            
+                            
                             <div id="mis_datos" class="links">
                                 <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                     <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
@@ -148,6 +150,9 @@
                                     </div>
                                 </form>
                             </div>
+    
+    
+    
                             <br>
                             <div id="tiempo">
                                 <h4>TIEMPO: 100 MINUTOS</h4>
@@ -158,7 +163,8 @@
                                 <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
                             </div>
                             <a href='<?=url('profile')?>'><button id="btn_modificarFoto">Modificar Foto</button></a>
-                            <form>
+                            
+                            <form action="{{url('/darseDeBaja')}}" method="post">
                                 <div>
                                     <input type="submit" value="Darse de baja" id="btnBaja">
                                 </div>
@@ -173,9 +179,26 @@
 
                 <div class="col-5 bg-primary">
                     <p>MIS MENSAJES</p>
+                    
+                    
+                        <div class="row bg-success ">
+                            <p>ENVIADOS</p>
+                        </div>
+                        <div class="row-1 bg-primary ">
+                            <p></p>
+                        </div>
+                    
+                        <div class="row bg-success ">
+                            <p>RECIBIDOS</p>
+                        </div>
+                      
+                    
+                     
                 </div>
+
+
             </div>
-            </BR>
+</BR>
             <div class="row">
                 <div class="col-1 bg-success">
                     <p>BLANCO 1</p>
