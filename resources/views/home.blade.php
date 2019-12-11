@@ -47,7 +47,9 @@
         .content {
             text-align: center;
         }
-        
+		.fontColor{
+			color:#1B1A99;
+		}
         .title {
             font-size: 84px;
         }
@@ -71,7 +73,12 @@
             margin-left: 1380px;
             margin-top: -480px;
         }
-
+	/*----------------------------------------------------------------------------------------------------*/
+		#capa_contacto{
+			width: 100px;
+			height: 100px;			   
+		}
+		
     </style>
 
 </head>
@@ -90,7 +97,7 @@
     <!-------------------------------------------contenido---------------------------------------------->
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
+            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"style='max-width: 350px'/></a>
         </div>
 
         <div class="links">
@@ -101,6 +108,10 @@
             <a href="{{url('/mensajes')}}">Mensajes</a>
             <a href="{{url('/multimedia')}}">Multimedia</a>
             <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
+			<div class="col-6 mt-6 mb-3">
+					 <a href='<?=url('/contacto')?>'><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>
+				<!--	<a class=fontColor href="{{url('/contacto')}}"><p >Contacto</p></a>	-->
+				</div> 
         </div>
     </div>
 </body>

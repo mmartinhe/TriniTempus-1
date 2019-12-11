@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -27,6 +27,10 @@
             margin: 0;
         }
         
+		.fontColor{
+			color:#1B1A99;
+			
+		}
         .full-height {
             height: 100vh;
         }
@@ -74,7 +78,7 @@
             border-radius: 20px;
             background-color: #D6F7FC;
             margin-left: 55px;
-            height: 280px;
+            height: 230px;
         }
         
         #capa_servicios_mas_solicitados {
@@ -85,6 +89,12 @@
         p {
             font-weight: bold;
         }
+		#capa_contacto{
+			width: 100px;
+			height: 100px;
+			border-radius: 20px;
+            background-color: #D6F7FC;          
+		}
 
     </style>
 </head>
@@ -102,26 +112,28 @@
 
     <div class="content">
         <div id="logo" class="title m-b-md">
-            <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a>
+            <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}" style="max-height: 200px"/></a>
         </div>
-        <div class="container-fluid  tex-center py-9 ">
+        <div class="container  tex-center py-9 ">
             <div class="row">
-
                 <div class="col-5 " id="capa_ultimos_servicios">
                     <p>ULTIMOS SERVICIOS</p>
                 </div>
-
-                <div class="col-1 " bg-primary>
-                    <p></p>
-                </div>
-
-                <div class="col-5 " id="capa_servicios_mas_solicitados">
+               
+                <div class="col-5 offset-1 " id="capa_servicios_mas_solicitados">
                     <p>ULTIMOS SERVICIOS</p>
-                </div>
-
-
+                </div>															
             </div>
+			<div class="col-3 mt-3 mb-3">
+					 <a href='<?=url('/contacto')?>'><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>
+					<a class=fontColor href="{{url('/contacto')}}"><p >CONTACTO</p></a>					
+				</div>
+			
         </div>
     </div>
 </body>
 </html>
+
+
+
+
