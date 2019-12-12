@@ -108,11 +108,15 @@
             <a href="{{url('/mensajes')}}">Mensajes</a>
             <a href="{{url('/multimedia')}}">Multimedia</a>
             <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
-			<div class="col-6 mt-6 mb-3">
+			
+        </div>				
+    </div>
+		<div class="content flex-center">
+		<footer>
+		<div class="col-6 mt-6 mb-3">
 					 <a href='<?=url('/contacto')?>'><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>
 				<!--	<a class=fontColor href="{{url('/contacto')}}"><p >Contacto</p></a>	-->
-				</div> 
-        </div>
-    </div>
+				</div>
+		</footer>
 </body>
 </html>
