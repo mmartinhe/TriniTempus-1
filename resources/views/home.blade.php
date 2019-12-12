@@ -70,8 +70,8 @@
         
         .container {
             position: absolute;
-            margin-left: 1380px;
-            margin-top: -480px;
+            margin-left: 100px;
+            margin-top: -280px;
         }
 	/*----------------------------------------------------------------------------------------------------*/
 		#capa_contacto{
