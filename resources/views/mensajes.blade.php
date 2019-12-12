@@ -89,6 +89,41 @@
             <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
         <h1>VISTA MENSAJES</h1>
+	<div class="container tex-center py-9 ">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 col-lg-6 bg-success">
+					<div class="row-sm-12 row-md-6 row-lg-6">
+						<div class="row-2">
+							<div class="col-3">
+								<div></div>
+							</div>
+						</div>
+						
+						<div class="row-2 bg-danger">
+							patata<br>
+						</div>
+						
+						<div class="row-2">
+							subnormal<br>
+						</div>
+						
+						<div class="row-2 bg-danger">
+							A Fregar<br>
+						</div>
+						
+						<div class="row-2">
+							mocasines<br>
+						</div>
+					</div>
+				</div>
+				<div class="col-1">
+					mensajes separacion
+				</div>
+				<div class="col-5 bg-success">
+					mensajes vacio
+				</div>
+			</div>
+		</div>
 
  
 
