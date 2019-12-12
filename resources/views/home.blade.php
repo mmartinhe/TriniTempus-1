@@ -6,6 +6,8 @@
 
     <title>TriniTempus</title>
 
+	    <!--link js-->
+<script src="app.js"></script>
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 
@@ -57,11 +59,13 @@
         .links> a {
             color: #636b6f;
             padding: 0 25px;
-            font-size: 13px;
+            font-size: 25px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
+			background-color:#C0BEBE;
+			border-radius: 24px;
         }
         
         .m-b-md {
@@ -73,23 +77,34 @@
             margin-left: 590px;
             margin-top: -400px;
         }
+		
 	/*----------------------------------------------------------------------------------------------------*/
 		#capa_contacto{
-			width: 100px;
-			height: 100px;			   
+			width: 80px;
+			height: 80px;			   
 		}
-        
+		#capa_soporte{
+			width: 50px;
+			height: 50px;			   
+		}
+		#capa_footer{
+			margin-top: 20px;
+			width: 500px;
+			height:80px;	
+			background-color: antiquewhite;
+			border-radius: 23px;
+		}
         
 		
     </style>
 
 </head>
 
-<body>
+<body class="fondo">
     @extends('layouts.app')
     <!---------------------------------------usuario logado y salir--------------------------------------------->
     @section('content') @endsection @if (Route::has('login'))
-    <div class="top-right links">
+    <div class="top-right links" onClick="eventosMenu()">
         @auth
         <a href="{{ url('/home') }}">Home</a>@else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
@@ -99,7 +114,7 @@
     <!-------------------------------------------contenido---------------------------------------------->
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"style='max-width: 350px'/></a>
+            <a id="capa" class="fondo" href='<?=url('/home ')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"style='max-width: 300px'/></a>
         </div>
 
         <div class="links">
@@ -114,10 +129,11 @@
         </div>				
     </div>
 		<div class="content flex-center">
-		<footer>
-		<div class="col-6 mt-6 mb-3">
-					 <a href='<?=url('/contacto')?>'><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>
-				<!--	<a class=fontColor href="{{url('/contacto')}}"><p >Contacto</p></a>	-->
+		<footer id="capa_footer">
+		<div class="col-3 mt-3 mb-3">
+					 <a href='<?=url('/contacto')?>'><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/>Contacto</a>			   
+					 <a href='<?=url('/soporte')?>'><img id="capa_soporte" src="{{ asset('img/support.png')}}"/>Soporte</a>
+			
 				</div>
 		</footer>
 </body>
