@@ -28,4 +28,22 @@ class MensajesController extends Controller
 		return view('mi_cuenta', ['mensajes' => $mensajes->toArray()]);*/
 
 	}
+	
+	function mostrarTodosVistaMensajes() {
+        
+    $mensajes = Mensaje::all();
+    //return view('mensajes.index', compact('mensajes'));
+    return view('mensajes')->with('mensajes',$mensajes);
+	}
+	/*
+	function mostrarMensajesUsuario($id) {
+    $mensajes = Mensaje::all();
+		//$mensajesUsuario;
+    //return view('mensajes.index', compact('mensajes'));
+		foreach($mensajes as $mensaje){
+			if($mensaje->emisor==$id)
+				$mensajesUsuario
+		}
+    return view('mensajes')->with('mensajes',$mensajesUsuario);
+	}*/
 }

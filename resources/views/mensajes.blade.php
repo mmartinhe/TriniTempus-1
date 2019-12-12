@@ -91,36 +91,40 @@
         <h1>VISTA MENSAJES</h1>
 	<div class="container tex-center py-9 ">
 			<div class="row">
-				<div class="col-sm-12 col-md-6 col-lg-6 bg-success">
-					<div class="row-sm-12 row-md-6 row-lg-6">
-						<div class="row-2">
-							<div class="col-3">
-								<div></div>
-							</div>
-						</div>
-						
-						<div class="row-2 bg-danger">
-							patata<br>
-						</div>
-						
-						<div class="row-2">
-							subnormal<br>
-						</div>
-						
-						<div class="row-2 bg-danger">
-							A Fregar<br>
-						</div>
-						
-						<div class="row-2">
-							mocasines<br>
-						</div>
-					</div>
-				</div>
-				<div class="col-1">
-					mensajes separacion
-				</div>
-				<div class="col-5 bg-success">
-					mensajes vacio
+				<div class="col-sm-12 col-md-6 col-lg-6">
+					<div class="panel panel-default ">
+                            <div class="panel-heading">
+
+                            </div>
+                            @if ($mensajes->isEmpty())
+                            <div>No hay Mensajes</div>
+                            @else
+                            <table class="table table-striped overflow-auto">
+                                <!--table table-hover table-dark-->
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Emisor</th>
+                                        <th>Receptor</th>
+                                        <th>Contenido</th>
+                                        <th>Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($mensajes as $mensaje)
+										<tr>
+											<td>{!! $mensaje->id_mensaje !!}</td>
+											<td>{!! $mensaje->emisor !!}</td>
+											<td>{!! $mensaje->receptor !!}</td>
+											<td>{!! $mensaje->contenido !!}</td>
+											<td>{!! $mensaje->tipo !!}</td>
+										</tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @endif
+                        </div>
+                   	</div>
 				</div>
 			</div>
 		</div>

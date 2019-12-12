@@ -50,6 +50,8 @@ Route::post('/updateprofile', 'UsuariosController@updateProfile');
 //----------------------------------------
 //RUTAS PARA MOSTRAR TODOS LOS MENSAJES
 Route::get('mi_cuenta', 'MensajesController@mostrarTodos');
+Route::get('mensajes', 'MensajesController@mostrarTodosVistaMensajes');
+//Route::get('mensajes', 'UsuariosController@');
 
 
 

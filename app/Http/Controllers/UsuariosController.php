@@ -92,8 +92,13 @@ class UsuariosController extends Controller {
         
     }
     
-    
-    
+	/*
+	public function saberID($request){
+		$usuario = User::find( $request->id );
+		
+		return view('mensajes')->with('id',$usuario);
+	}*/
+	
     
     
     
