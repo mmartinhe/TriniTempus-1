@@ -12,6 +12,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 
+    <!-- calendario CSS -->
+    <link rel="stylesheet" href="{{ asset('css/css_calendario.css')}}">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -73,7 +76,16 @@
         #capa_datos {
             border-radius: 20px;
             background-color: #D6F7FC;
-            /*margin-left: 55px;*/
+            margin-left: 55px;
+        }
+        
+        #capa_mensajes {
+            border-radius: 20px;
+            background-color: #D6F7FC;
+        }
+        
+        table {
+            margin-left: 40px;
         }
         
         p {
@@ -123,16 +135,14 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+            <a id="capa" href='<?=url('/home')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
 
-        <div class="container-fluid tex-center py-9 ">
+        <div class="container-fluid tex-center py-auto ">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-5 " id="capa_datos">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6 ">
-                            
-                            
                             <div id="mis_datos" class="links">
                                 <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                     <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
@@ -150,9 +160,6 @@
                                     </div>
                                 </form>
                             </div>
-    
-    
-    
                             <br>
                             <div id="tiempo">
                                 <h4>TIEMPO: 100 MINUTOS</h4>
@@ -163,7 +170,7 @@
                                 <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
                             </div>
                             <a href='<?=url('profile')?>'><button id="btn_modificarFoto">Modificar Foto</button></a>
-                            
+
                             <form action="{{url('/darseDeBaja')}}" method="post">
                                 <div>
                                     <input type="submit" value="Darse de baja" id="btnBaja">
@@ -172,36 +179,49 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-1 ">
                     <p>BLANCO 1</p>
                 </div>
 
-                <div class="col-5 bg-primary">
-                    <p>MIS MENSAJES</p>
-                    
-                    
-                        <div class="row bg-success ">
-                            <p>ENVIADOS:</p>
-                            
-                           
-                            
+                <div class="col-5" id="capa_mensajes">
+                    <h2>Mensajes</h2>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+                            </div>
+                            @if ($mensajes->isEmpty())
+                            <div>No hay Mensajes</div>
+                            @else
+                            <table class="table table-striped ">
+                                <!--table table-hover table-dark-->
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Emisor</th>
+                                        <th>Receptor</th>
+                                        <th>Contenido</th>
+                                        <th>Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($mensajes as $mensaje)
+                                    <tr>
+                                        <td>{!! $mensaje->id_mensaje !!}</td>
+                                        <td>{!! $mensaje->emisor !!}</td>
+                                        <td>{!! $mensaje->receptor !!}</td>
+                                        <td>{!! $mensaje->contenido !!}</td>
+                                        <td>{!! $mensaje->tipo !!}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            @endif
                         </div>
-                        <div class="row-1 bg-primary ">
-                            <p></p>
-                        </div>
-                    
-                        <div class="row bg-success ">
-                            <p>RECIBIDOS:</p>
-                        </div>
-                      
-                    
-                     
+                    </div>
                 </div>
-
-
             </div>
-</BR>
+            </BR>
             <div class="row">
                 <div class="col-1 bg-success">
                     <p>BLANCO 1</p>
@@ -234,5 +254,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/js_calendario.js')}}"></script>
 </body>
 </html>

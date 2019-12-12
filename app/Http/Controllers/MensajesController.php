@@ -8,6 +8,15 @@ use App\Mensaje;
 class MensajesController extends Controller
 {
     function mostrarTodos() {
+        
+    $mensajes = Mensaje::all();
+    //return view('mensajes.index', compact('mensajes'));
+    return view('mi_cuenta')->with('mensajes',$mensajes);
+        
+        
+        
+        
+        
 /*		$mensajes = Mensaje::all();
 
 		return view('mi_cuenta', [
@@ -15,8 +24,8 @@ class MensajesController extends Controller
 		]);*/
         
 
-		$mensajes = Mensaje::all();
-		return view('mi_cuenta', ['mensajes' => $mensajes->toArray()]);
+/*		$mensajes = Mensaje::all();
+		return view('mi_cuenta', ['mensajes' => $mensajes->toArray()]);*/
 
 	}
 }

@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Notifiable;
 
 class Mensaje extends Model
 {
-    use Notifiable;
+    
     public $timestamps = false;
     
     
