@@ -70,7 +70,7 @@
         
         .container {
             position: absolute;
-            margin-left: 580px;
+            margin-left: 590px;
             margin-top: -400px;
         }
 	/*----------------------------------------------------------------------------------------------------*/
@@ -78,6 +78,8 @@
 			width: 100px;
 			height: 100px;			   
 		}
+        
+        
 		
     </style>
 
