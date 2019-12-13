@@ -18,7 +18,10 @@
     <style>
         html,
         body {
-			background-image: url("../../public/img/fondo.jpg");
+			/*
+			background-image: {{asset('img/negocio.jpg')}};
+			background-image: url({{asset('img/negocio.jpg')}})
+			*/
             background-color: #A0E5EB;
             color: #636b6f;
             font-family: 'Exo', sans-serif;
@@ -59,40 +62,34 @@
             font-size: 84px;
         }
         
-        .links> a:hover {
-			/*
-            color: #312828;
-            padding: 0 25px;
-            font-size: 30px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            background-color: #9F9F9F;
-            border-radius: 30px;
+		.links>a{
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			border: 2px thin ;
+			border-radius: 15px;
+			padding: 17px 25px;
+			margin: 10px;
+			background-color:  #b47c4a;
 			
-			font-family: Arial;
- 			 color: #fafafa;
-  				font-size: 27px;
- 			 padding: 19px;
-  			text-decoration: none;
-			*/
-			color: #0099CC;
-			background: transparent;
-			border: 2px solid #0099CC;
-			border-radius: 6px;
-			border: none;
+		
+		}
+		.img{
+			margin: 30px;
+		}
+        .links> a:hover {
+			
+			background-color: #4c515b;			
+						border: 2px thin ;
+						border-radius: 20px;
 			  color: white;
-			  padding: 16px 32px;
+			
 			  text-align: center;
 			  display: inline-block;
-			  font-size: 16px;
-			  margin: 4px 2px;
-			  -webkit-transition-duration: 0.4s; /* Safari */
-			  transition-duration: 0.4s;
-			  cursor: pointer;
+			  font-size: 26px;
+			  margin: 20px 34px;			 
+			  transition-duration: 1s;
 			  text-decoration: none;
-			  text-transform: uppercase;		
 		}
 		
 			
@@ -108,6 +105,7 @@
             margin-left: 590px;
             margin-top: -400px;
         }
+		
         
         /*----------------------------------------------------------------------------------------------------*/
         #capa_contacto {
@@ -121,10 +119,9 @@
         }
         
         #capa_footer {
-            margin-top: 20px;
             width: 500px;
             height: 80px;
-            background-color: antiquewhite;
+            background-color:#b47c4a;
             border-radius: 23px;
         }
 
@@ -156,19 +153,20 @@
             <a href="{{url('/mensajes')}}">Mensajes</a>
             <a href="{{url('/multimedia')}}">Multimedia</a>
             <a href="https://github.com/LauraGuerrero/TriniTempus">GitHub</a>
-
+		
+			<!-- prueba de hacer un scroll -->
+			<img class="img" src="{{asset('img/negocio2.jpg')}}" >
         </div>
     </div>
     <div class="content flex-center">
         <footer id="capa_footer">
             <div class="col-3 mt-3 mb-3">
-               <img id="capa_contacto" src="{{ asset('img/contact.png')}}"/>
-				<img id="capa_soporte" src="{{ asset('img/support.png')}}"/>
+              
             </div>					
-			 <a href="{{ url('contacto')}}">Contacto &nbsp;&nbsp;&nbsp;</a>
-						
+			 <a title="Contacto" href="{{ url('contacto')}}"><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>						
 
-             <a href="{{ url('soporte')}}">Soporte</a>
+             <a title="Soporte" href="{{ url('soporte')}}"><img id="capa_soporte" src="{{ asset('img/support.png')}}"/>
+</a>
 			</div>
         </footer>
 </body>
