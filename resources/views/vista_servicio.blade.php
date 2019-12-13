@@ -128,7 +128,7 @@
                 <div class="col-md-6">
                     <form action="{{ asset('/Evento/create/') }}" method="post">
                         <div class="fomr-group">
-                            <h4>Id servicio</h4> {{ $servicio->id_servicio }}
+                            <h4>Id servicio</h4> {{ $servicio->id }}
                         </div>
                         <div class="fomr-group">
                             <h4>Id usuario</h4> {{ $servicio->id_usuario }}

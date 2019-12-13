@@ -40,6 +40,8 @@ class ServicioController extends Controller {
     }
 
     public function details($id){
+        
+        //echo "llegooooo" . $id_servicio;
 
       $servicio = Servicio::find($id);
 

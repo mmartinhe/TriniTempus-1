@@ -163,7 +163,7 @@
                         {{ $dayweek['dia'] }}
                         <!-- servicio -->
                         @foreach ($dayweek['evento'] as $servicio)
-                        <a class="badge badge-primary" href="{{ asset('/Evento/details/') }}/{{ $servicio->id_servicio }}">
+                        <a class="badge badge-primary" href="{{ asset('/Evento/details/') }}/{{ $servicio->id }}">
                     {{ $servicio->titulo }} <!--PREMIOOOOOOOO ASI SE PASA EL IDDDDDDDDD XDDDDDD-->
                   </a>
                         @endforeach
@@ -177,7 +177,7 @@
 
         </div>
         <!-- /container -->
-id
+i
 
 
     </div>
