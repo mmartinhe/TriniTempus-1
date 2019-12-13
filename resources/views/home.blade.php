@@ -66,7 +66,7 @@
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
-            background-color: #C0BEBE;
+            background-color: #9F9F9F;
             border-radius: 24px;
         }
         
