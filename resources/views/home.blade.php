@@ -7,7 +7,7 @@
     <title>TriniTempus</title>
 
     <!--link js-->
-    <script src="app.js"></script>
+    <script src="stiloMenu.js"></script>
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 
@@ -52,23 +52,51 @@
         }
         
         .fontColor {
-            color: #1B1A99;
+            color: #312828;
         }
         
         .title {
             font-size: 84px;
         }
         
-        .links> a {
-            color: #636b6f;
+        .links> a:hover {
+			/*
+            color: #312828;
             padding: 0 25px;
-            font-size: 25px;
+            font-size: 30px;
             font-weight: 600;
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
             background-color: #9F9F9F;
-            border-radius: 24px;
+            border-radius: 30px;
+			
+			font-family: Arial;
+ 			 color: #fafafa;
+  				font-size: 27px;
+ 			 padding: 19px;
+  			text-decoration: none;
+			*/
+			color: #0099CC;
+			background: transparent;
+			border: 2px solid #0099CC;
+			border-radius: 6px;
+			border: none;
+			  color: white;
+			  padding: 16px 32px;
+			  text-align: center;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  -webkit-transition-duration: 0.4s; /* Safari */
+			  transition-duration: 0.4s;
+			  cursor: pointer;
+			  text-decoration: none;
+			  text-transform: uppercase;		
+		}
+		
+			
+			
         }
         
         .m-b-md {
@@ -122,8 +150,8 @@
         </div>
 
         <div class="links">
-            <a href="{{url('/mi_cuenta')}}">Mi cuenta</a>       
-            <a href="{{url('/ofertas')}}">Mis servicios</a>
+            <a class="" href="{{url('/mi_cuenta')}}">Mi cuenta</a>       
+            <a href="{{url('/ofertas')}}">Agenda</a>
             <a href="{{url('/buscador')}}">Buscador</a>
             <a href="{{url('/mensajes')}}">Mensajes</a>
             <a href="{{url('/multimedia')}}">Multimedia</a>
