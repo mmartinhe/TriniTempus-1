@@ -18,6 +18,7 @@
     <style>
         html,
         body {
+			background-image: url("../../public/img/fondo.jpg");
             background-color: #A0E5EB;
             color: #636b6f;
             font-family: 'Exo', sans-serif;
@@ -104,7 +105,7 @@
 </head>
 
 <body class="fondo">
-    @extends('layouts.app')
+    <!--@extends('layouts.app') -->
     <!---------------------------------------usuario logado y salir--------------------------------------------->
     @section('content') @endsection @if (Route::has('login'))
     <div class="top-right links" onClick="eventosMenu()">
@@ -133,10 +134,14 @@
     <div class="content flex-center">
         <footer id="capa_footer">
             <div class="col-3 mt-3 mb-3">
-                <a href="{{ url('contacto')}}"><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/>Contacto</a>
-                <a href="{{ url('soporte')}}"><img id="capa_soporte" src="{{ asset('img/support.png')}}"/>Soporte</a>
+               <img id="capa_contacto" src="{{ asset('img/contact.png')}}"/>
+				<img id="capa_soporte" src="{{ asset('img/support.png')}}"/>
+            </div>					
+			 <a href="{{ url('contacto')}}">Contacto &nbsp;&nbsp;&nbsp;</a>
+						
 
-            </div>
+             <a href="{{ url('soporte')}}">Soporte</a>
+			</div>
         </footer>
 </body>
 </html>
