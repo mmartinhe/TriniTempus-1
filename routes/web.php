@@ -53,7 +53,18 @@ Route::get('mi_cuenta', 'MensajesController@mostrarTodos');
 Route::get('mensajes', 'MensajesController@mostrarTodosVistaMensajes');
 //Route::get('mensajes', 'UsuariosController@');
 
-
+//--------------------------------------------------
+//RUTAS DEL CALENDARIO
+Route::get('Calendar/event/{mes}','CalendarioController@index_month');
+Route::get('Calendar/event','CalendarioController@index');
+//--------------------------------------------------
+//RUTAS PARA LOS SERVICIOS
+Route::get('Evento/form','ServicioController@form');
+Route::post('Evento/create','ServicioController@create');
+Route::get('Evento/details/{id}','ServicioController@details');
+Route::get('ofertas','ServicioController@index');
+Route::get('Evento/index/{month}','ServicioController@index_month');
+Route::post('Evento/calendario','ServicioController@calendario');
 
 
 

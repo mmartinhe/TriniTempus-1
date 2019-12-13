@@ -21,7 +21,7 @@
         body {
             background-color: #A0E5EB;
             color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Exo', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;

@@ -24,7 +24,7 @@
         body {
             background-color: #A0E5EB;
             color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Exo', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -135,7 +135,7 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+            <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
 
         <div class="container-fluid tex-center py-auto ">
@@ -169,7 +169,7 @@
                             <div id="foto">
                                 <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
                             </div>
-                            <a href='<?=url('profile')?>'><button id="btn_modificarFoto">Modificar Foto</button></a>
+                            <a href="{{ url('profile')}}"><button id="btn_modificarFoto">Modificar Foto</button></a>
 
                             <form action="{{url('/darseDeBaja')}}" method="post">
                                 <div>

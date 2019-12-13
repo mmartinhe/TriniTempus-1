@@ -21,7 +21,7 @@
         body {
             background-color: #A0E5EB;
             color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Exo', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -86,7 +86,7 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+            <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
         <h1>VISTA ADMINISTRADOR</h1>
 

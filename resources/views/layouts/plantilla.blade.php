@@ -85,9 +85,9 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
-        <h1>VISTA BUSCADOR</h1>
+        <h1>VISTA PRUEBA LAYOUT</h1>
 
 
 
