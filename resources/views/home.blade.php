@@ -169,6 +169,13 @@
             margin: 30px;
             transition: all 0.5s linear;
         }
+        
+        #encabezado{
+            width: 500px;
+        }
+         #capa{
+            width: 500px;
+        }
 
     </style>
 
