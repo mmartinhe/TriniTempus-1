@@ -31,6 +31,7 @@
             height: 100vh;
             margin: 0;
         }
+
         
         .full-height {
             height: 100vh;
@@ -119,32 +120,12 @@
     </div>
     @endif
     <div class="content">
-        <div class="title m-b-md">
-            <a id="capa" href="{{ url('home')}}"><img  id="logo" src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
-            <a class="btn btn-info " href="{{ asset('/Evento/form') }}">Crear un Servicio</a>
-        </div>
+       
         <!--ESTO ES LO QUE SE VE PERO SE VUELCA A VISTA SERVICIOS-->
         <div class="container">
 
 
-            <div class="row header-calendar">
-
-                <div class="col" style="display: flex; justify-content: space-between; padding: 10px;">
-                    <a href="{{ asset('/Calendar/event/') }}/<?= $data['last']; ?>" style="margin:10px;">
-                        <i class="fas fa-chevron-circle-left" style="font-size:30px;color:white;"></i>
-                    </a>
-                
-
-            <h2 style="font-weight:bold;margin:10px;"><?= $mespanish; ?><small><?= $data['year']; ?></small </h2>
-                
-                    <a href="{{ asset('/Calendar/event/') }}/<?= $data['next']; ?>" style="margin:10px;">
-                        <i class="fas fa-chevron-circle-right" style="font-size:30px;color:white;"></i>
-                    </a>
-                
-
-                </div>
-
-            </div>
+            
             <div class="row">
                 <div class="col header-col">Lunes</div>
                 <div class="col header-col">Martes</div>
@@ -177,7 +158,6 @@
 
         </div>
         <!-- /container -->
-        i
 
 
     </div>

@@ -118,7 +118,7 @@
     @endif
     <div class="content">
         <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+            <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
         </div>
         <h1>VISTA CALENDARIO</h1>
 

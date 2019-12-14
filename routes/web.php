@@ -65,7 +65,9 @@ Route::get('Evento/details/{id}','ServicioController@details');
 Route::get('ofertas','ServicioController@index');
 Route::get('Evento/index/{month}','ServicioController@index_month');
 Route::post('Evento/calendario','ServicioController@calendario');
-
+//--------------------------------------------------
+//PARA MOSTRAR CALENDARIO EN MI CUENTA 
+Route::get('buscador','ServicioController@index');
 
 
 
