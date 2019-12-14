@@ -48,7 +48,7 @@
             background:         linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
 			*/
 			background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
-			background: -webkit-linear-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(32%, rgba(191,184,191,1)), color-stop(65%, rgba(191,184,191,1)), color-stop(100%, rgba(237,237,237,1)));
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(32%, rgba(191,184,191,1)), color-stop(65%, rgba(191,184,191,1)), color-stop(100%, rgba(237,237,237,1)));
 			background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
 			background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
 			background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
@@ -136,7 +136,7 @@
             background-color:#A29080 ;
             margin-left: 55px;
             opacity:0.8;			
- 			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 			
@@ -161,6 +161,7 @@
         input {
             border-radius: 20px;
             padding-left: 10px;
+            font-size: 20px;
         }
         
         #foto {
@@ -188,13 +189,14 @@
         }
         
         #capa_logado{
-            background-color: red;
+           
             border-radius: 20px;
-            background-color: #D6F7FC;
+
             opacity:0.8;
             width: 120px;
             left: 150px;
             top:30px;
+
         }
 
     </style>
@@ -208,7 +210,7 @@
         <a href="{{ url('/mi_cuenta') }}">Mi cuenta</a>
     
         <div id="app">
-            <nav id="capa_logado" class="navbar navbar-expand-md navbar-light  shadow-sm">
+            <nav id="capa_logado" class="navbar navbar-expand-md navbar-light   shadow-sm">
                 <div class="container">
 
 
@@ -291,7 +293,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6  ">
                             <div id="foto">
-                                <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 120px'/>
+                                <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 200px'/>
                             </div>
                             <a href="{{ url('profile')}}"><button id="btn_modificarFoto">Modificar Foto</button></a>
 
