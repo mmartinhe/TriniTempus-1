@@ -119,27 +119,71 @@
         }
 		
         
+        /*----------------------------------------------------------------------------------------------------*/
+        #capa_contacto {
+            width: 80px;
+            height: 80px;
+            margin-left: -20px;
+        }
         
-        /*---------------------------------------------------------------*/
+        #capa_soporte {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            margin-left: 150px;
+        }
+        
+        #capa_footer {
+            width: 500px;
+            height: 80px;
+            background-color:#b47c4a;
+            border-radius: 20px;
+            opacity:0.8;
+        }
+        
+                	
+		.img{
+			margin: 30px;
+            transition: all 0.5s linear;
+            border-radius: 20px;
+		}
+        
+        img:hover{
+            transform: scale(0.9);
+            border-radius: 20px;
+        }
+        
+        #capa_footer{
+            margin: 30px;
+            margin-top: -7px;
+            transition: all 0.5s linear;
+        }
+        
+        #capa_footer:hover{
+            transform: scale(0.9);
+            border-radius: 20px;
+            background-color: #4c515b;
+        }
+        
+        .content flex-center{
+            margin: 30px;
+            transition: all 0.5s linear;
+        }
+        
+        #encabezado{
+            width: 500px;
+        }
+         #capa{
+            width: 500px;
+        }
 
     </style>
+
 </head>
 
+
 <body>
-    @if (Route::has('login'))
-    <div class="top-right links">
-        @auth
-        <a href="{{ url('/home') }}">Home</a>
-        <a href="{{ url('/buscador') }}">Buscador</a>@else
-        <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
-        <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
-    </div>
-    @endif
-    <div class="content">
-        <div class="title m-b-md">
-            <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
-        </div>
-        <h1>VISTA PRUEBA LAYOUT</h1>
+      
 
 
 
@@ -150,7 +194,6 @@
 
 
 
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

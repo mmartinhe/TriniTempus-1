@@ -22,12 +22,44 @@
     <style>
         html,
         body {
-            background-color: #A0E5EB;
+          /*
+			background-image: {{asset('img/negocio.jpg')}};
+			background-image: url({{asset('img/negocio.jpg')}})
+			*/
+            /*background-color: #A0E5EB;*/
+           /* background: rgba(182,194,237,1);*/
+
             color: #636b6f;
             font-family: 'Exo', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
+            
+           /* background: -webkit-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:    -moz-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:     -ms-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:      -o-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:         linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);*/
+            /*
+            background: -webkit-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:    -moz-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:     -ms-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:      -o-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:         linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+			*/
+			background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(32%, rgba(191,184,191,1)), color-stop(65%, rgba(191,184,191,1)), color-stop(100%, rgba(237,237,237,1)));
+			background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+            
+			/*
+            background: -webkit-linear-gradient(90deg, #3rerewqw 10%, #fccb6e 90%);
+            background:    -moz-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:     -ms-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:      -o-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:         linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+			*/
         }
         
         .full-height {
@@ -58,32 +90,64 @@
             font-size: 84px;
         }
         
-        .links> a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+        
+		.links>a{
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			border: 2px thin ;
+			border-radius: 15px;
+			padding: 17px 25px;
+			margin: 10px;
+			background-color:  #B59B85;
+			opacity:0.8;
+			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+		
+		}
+        
+        .links> a:hover {
+			
+			background-color: #4c515b;
+            margin-top: 5px;
+            font-weight: bold;
+            transition: all 0.5s linear;
+            border-radius: 30px;
+            transform: scale(0.9);   
+            opacity:0.8;           
+		}
         
         .m-b-md {
             margin-bottom: 30px;
         }
+		.titulo{
+			color: #342C2C
+		}
+		.tiempoMensaje{
+			background-color: #C9AF97;
+			border-radius: 20px;
+				
+		}
+		 
         
         /*------------------ESTILOS MIOS-----------------------*/
         #capa_datos {
             border-radius: 20px;
-            background-color: #D6F7FC;
+            background-color:#A29080 ;
             margin-left: 55px;
-            opacity:0.8;
+            opacity:0.8;			
+ 			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+			
         }
         
         #capa_mensajes {
             border-radius: 20px;
-            background-color: #D6F7FC;
+            background-color: #A29080;
             opacity:0.8;
+			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
         }
         
         table {
@@ -91,7 +155,7 @@
         }
         
         p {
-            font-weight: bold;
+            font-weight: bold;color: #342C2C
         }
         
         input {
@@ -206,6 +270,7 @@
                                 <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                     <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
                                     <div id="datos_usuario" class="mt-2">
+										<h2 class="titulo">Datos Usuario</h2>
                                         <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
                                         <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
                                         </p>
@@ -221,7 +286,7 @@
                             </div>
                             <br>
                             <div id="tiempo">
-                                <h4>TIEMPO: 100 MINUTOS</h4>
+                                <h4 class="tiempoMensaje">TIEMPO: 100 MINUTOS</h4>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6  ">
@@ -243,7 +308,7 @@
                 </div>
 
                 <div class="col-5" id="capa_mensajes">
-                    <h2>Mensajes</h2>
+                    <h2 class="titulo">Mensajes</h2>
                     <div class="row">
                         <div class="panel panel-default">
                             <div class="panel-heading">

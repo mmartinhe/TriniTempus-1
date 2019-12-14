@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -43,12 +46,18 @@
             background:      -o-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
             background:         linear-gradient(90deg, #65997d 10%, #fccb6e 90%);*/
             
+			/*
             background: -webkit-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:    -moz-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:     -ms-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:      -o-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:         linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
-
+				*/
+			background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(32%, rgba(191,184,191,1)), color-stop(65%, rgba(191,184,191,1)), color-stop(100%, rgba(237,237,237,1)));
+			background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
+			background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
         }
         
         .full-height {
@@ -91,7 +100,7 @@
 			border-radius: 15px;
 			padding: 17px 25px;
 			margin: 10px;
-			background-color:  #b47c4a;
+			background-color:  #A29080;
 			opacity:0.8;
 		
 		}
@@ -136,7 +145,7 @@
         #capa_footer {
             width: 500px;
             height: 80px;
-            background-color:#b47c4a;
+            background-color:#A29080;
             border-radius: 20px;
             opacity:0.8;
         }
