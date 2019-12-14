@@ -17,6 +17,12 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+	<style>
+		#textAreaServicios{
+			width: 807px; 
+			height: 116px;
+		}
+	</style>
     
 </head>
 
@@ -35,53 +41,35 @@
             <a id="capa" href='<?=url('/home ')?>'><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
         </div>
         <h1>Tus mensajes</h1>
-	<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-12 col-md-6 col-lg-6">
-					<div class="panel panel-default ">
-                            <div class="panel-heading">
-
-                            </div>
-                            @if ($mensajes->isEmpty())
-                            <div>No hay Mensajes</div>
-                            @else
-                            <table class="table table-striped overflow-auto">
-                                <!--table table-hover table-dark-->
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Emisor</th>
-                                        <th>Receptor</th>
-                                        <th>Contenido</th>
-                                        <th>Tipo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($mensajes as $mensaje)
-										<tr>
-											<td>{!! $mensaje->id_mensaje !!}</td>
-											<td>{!! $mensaje->emisor !!}</td>
-											<td>{!! $mensaje->receptor !!}</td>
-											<td>{!! $mensaje->contenido !!}</td>
-											<td>{!! $mensaje->tipo !!}</td>
-										</tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            @endif
-                        </div>
-                   	</div>
-				</div>
+			<div class="col-sm-12">
+				<h1>Crear Mensaje</h1>
+					<form action="{{url('/mensajes')}}" method="post" id="crearMensaje">
+						<input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
+						<div class="row-sm-12" id="datos_contacto">
+							<p id="usuario">Usuario a buscar:&nbsp&nbsp
+								<input type="text" name="textoBuscar"</input>
+								<input type="button" name="botonPulsar" value="Buscar"</input>
+							</p>
+						</div>
+						<div class="row-sm-12">
+							<p>Servivios del usuario:&nbsp&nbsp</p>
+							<textarea name="servicios" id="textAreaServicios"></textarea>
+						</div>
+							
+						<div class="row-sm-12">
+							<p id="consulta">Consulta:&nbsp&nbsp</p>
+							<textarea name="mensaje"> </textarea> 
+								<br>
+								<input type="radio" name="tipo" checked>publico</input>
+								<br>
+								<input type="radio" name="tipo">privado</input>
+								<br>
+								<input type="button" name="botonEnviar" value="Enviar"></input>
+						</div>
+						</div>
+					</form>
 			</div>
 		</div>
-
- 
-
-
-
-
-
-
 
     </div>
     <!-- Optional JavaScript -->
