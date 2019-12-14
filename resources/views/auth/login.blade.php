@@ -9,66 +9,17 @@
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 
-
+<!---css--->
+	<link rel="stylesheet" href="css/stilos.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
     <style>
-        html,
-        body {
-            background-color: #A0E5EB;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .full-height {
-            height: 100vh;
-        }
-        
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .position-ref {
-            position: relative;
-        }
-        
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .title {
-            font-size: 84px;
-        }
-        
-        .links> a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .m-b-md {
-            margin-bottom: 30px;
-        }
+      
         
         #logo {
-            margin-top: -300px;
+            margin-top: -300;
         }
         
         #capa_logueo {
@@ -77,8 +28,8 @@
             width: 300px;
             height: 300px;
             border-radius: 20px;
-            margin-left: 100px;
-            margin-top: -100px;
+            margin-left: 50px;
+            margin-top: -40px;
             padding-top: 20px;
             font-size: 20px;
             font-weight: bold;
@@ -102,7 +53,7 @@
 
         <div class="content">
             <div id="logo" class="title m-b-md">
-                <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a> @section('content')
+                <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"style="max-height: 350px"/></a> @section('content')
                 <div id="capa_logueo" class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-8">

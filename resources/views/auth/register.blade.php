@@ -7,6 +7,9 @@
 
     <title>TriniTempus</title>
 
+	
+<!---css--->
+	<link rel="stylesheet" href="css/stilos.css">
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 
@@ -16,60 +19,10 @@
 
     <!-- Styles -->
     <style>
-        html,
-        body {
-            background-color: #A0E5EB;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .full-height {
-            height: 100vh;
-        }
-        
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .position-ref {
-            position: relative;
-        }
-        
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .title {
-            font-size: 84px;
-        }
-        
-        .links> a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .m-b-md {
-            margin-bottom: 30px;
-        }
+       
         
         #logo {
-            margin-top: -300px;
+            margin-top: -10px;
         }
         #capa_registro{
             position: absolute;
@@ -77,8 +30,8 @@
             width: 350px;
             height: 360px;
             border-radius: 20px;
-            margin-left: 60px;
-            margin-top: -120px;
+            margin-left: 30px;
+            margin-top: -20px;
             padding-left: 20px;
             padding-top: 5px;
             font-size: 20px;
@@ -103,7 +56,7 @@
 
         <div class="content">
             <div id="logo" class="title m-b-md">
-                <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}"/></a> 
+                <a id="capa" href='<?=url('/')?>'><img id="encabezado" src="{{ asset('img/logo.png')}}" style="max-height: 350px"style=max-height: "350px"/></a> 
         
 @section('content')
 <div id="capa_registro" class="container">

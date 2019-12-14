@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,7 +7,10 @@
 
     <!--icono pestaña-->
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
-
+	
+	<!---css--->
+	<link rel="stylesheet" href="css/stilos.css">
+	
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 
@@ -17,73 +19,24 @@
 
     <!-- Styles -->
     <style>
-        html,
-        body {
-            background-color: #A0E5EB;
-            color: #636b6f;
-            font-family: 'Exo', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .fontColor {
-            color: #1B1A99;
-        }
-        
-        .full-height {
-            height: 100vh;
-        }
-        
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .position-ref {
-            position: relative;
-        }
-        
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .title {
-            font-size: 84px;
-        }
-        
-        .links> a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-        
-        /*---------------------------------------------------------------*/
+      
         #capa_ultimos_servicios {
             border-radius: 20px;
             background-color: #D6F7FC;
-            margin-left: 55px;
+            margin-left: 855px;
+			margin-top: 400px;
             height: 230px;
+			background-color: #CFCCC5;
+			
         }
         
         #capa_servicios_mas_solicitados {
+			position: absolute;
+			margin-top: 400px;
+			 margin-left: 255px;
             border-radius: 20px;
-            background-color: #D6F7FC;
+			 height: 230px;
+            background-color: #CFCCC5;
         }
         
         p {
@@ -93,8 +46,10 @@
         #capa_contacto {
             width: 100px;
             height: 100px;
+			margin-left: 230px;
             border-radius: 20px;
-            background-color: #D6F7FC;
+            background-color: #A29080;
+			padding: 10px 20px 100px 1050px;
         }
 
     </style>
@@ -115,21 +70,23 @@
         <div id="logo" class="title m-b-md">
             <a id="capa" href="{{ url('/')}}"><img id="encabezado" src="{{ asset('img/logo.png')}}" style="max-height: 200px"/></a>
         </div>
-        <div class="container  tex-center py-9 ">
+		
+        <div class="container">			
             <div class="row">
                 <div class="col-5 " id="capa_ultimos_servicios">
                     <p>ULTIMOS SERVICIOS</p>
                 </div>
 
                 <div class="col-5 offset-1 " id="capa_servicios_mas_solicitados">
-                    <p>ULTIMOS SERVICIOS</p>
+                    <p>SERVICIOS MAS SOLICITADOS</p>
                 </div>
             </div>
+
+			
             <div class="col-3 mt-3 mb-3">
-                <a href="{{ url('contacto')}}"><img id="capa_contacto" src="{{ asset('img/contact.png')}}"/></a>
-                <a class=fontColor href="{{url('/contacto')}}">
-                    <p>CONTACTO</p>
-                </a>
+             
+              <a> <img id=capa_contacto src="{{ asset('img/contact.png')}}"/></a>
+				
             </div>
 
         </div>

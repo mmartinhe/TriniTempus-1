@@ -78,9 +78,9 @@
 			border-radius: 15px;
 			padding: 17px 25px;
 			margin: 10px;
-			background-color:  #A29080;
+			background-color:  #B59B85;
 			opacity:0.8;
-		
+			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
         
         .links> a:hover {
@@ -92,6 +92,7 @@
             border-radius: 30px;
             transform: scale(0.9);   
             opacity:0.8;           
+			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
 		
         
@@ -105,4 +106,3 @@
             margin-top: -400px;
         }
 		
-      
