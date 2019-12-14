@@ -77,11 +77,13 @@
             border-radius: 20px;
             background-color: #D6F7FC;
             margin-left: 55px;
+            opacity:0.8;
         }
         
         #capa_mensajes {
             border-radius: 20px;
             background-color: #D6F7FC;
+            opacity:0.8;
         }
         
         table {
@@ -114,10 +116,21 @@
             margin-top: 30px;
             border-radius: 20px;
             margin-bottom: 10px;
+            opacity:0.8;
         }
         
         #btnModificarDatos {
             border-radius: 20px;
+        }
+        
+        #capa_logado{
+            background-color: red;
+            border-radius: 20px;
+            background-color: #D6F7FC;
+            opacity:0.8;
+            width: 120px;
+            left: 110px;
+            top:10px;
         }
 
     </style>
@@ -129,54 +142,51 @@
         @auth
         <a href="{{ url('/home') }}">Home</a>
         <a href="{{ url('/mi_cuenta') }}">Mi cuenta</a>
+    
         <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                
+            <nav id="capa_logado" class="navbar navbar-expand-md navbar-light  shadow-sm">
+                <div class="container">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            
-                        @else
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+                            
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Salir') }}
                                     </a>
+                                
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
-                        @endguest
-                    </ul>
+                            @endguest
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-        
-        
-        
-        
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
+
         @else
         <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
