@@ -22,12 +22,33 @@
 			background-image: {{asset('img/negocio.jpg')}};
 			background-image: url({{asset('img/negocio.jpg')}})
 			*/
-            background-color: #A0E5EB;
+            /*background-color: #A0E5EB;*/
+           /* background: rgba(182,194,237,1);*/
+
             color: #636b6f;
             font-family: 'Exo', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
+            
+           /* background: -webkit-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:    -moz-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:     -ms-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:      -o-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+            background:         linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);*/
+            
+            /*background: -webkit-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:    -moz-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:     -ms-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:      -o-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+            background:         linear-gradient(90deg, #65997d 10%, #fccb6e 90%);*/
+            
+            background: -webkit-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:    -moz-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:     -ms-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:      -o-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+            background:         linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
+
         }
         
         .full-height {
@@ -141,6 +162,7 @@
         #capa_footer:hover{
             transform: scale(0.9);
             border-radius: 20px;
+            background-color: #4c515b;
         }
         
         .content flex-center{
