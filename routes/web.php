@@ -22,6 +22,7 @@ Route::get( '/home', 'HomeController@index' )->name( 'home' );
 //--------------------------------------------------
 //RUTAS PARA LOS CAMBIOS DE VISTA 
 
+
 Route::get( '/mi_cuenta', function () { return view( 'mi_cuenta' ); } );
 
 Route::get( '/contacto', function () {return view( 'contacto' );} );
@@ -35,6 +36,9 @@ Route::get( '/multimedia', function () {return view( 'multimedia' );} );
 Route::get( '/administrador', function () {return view( 'administrador' );} );
 
 Route::get( '/buscador', function () {return view( 'buscador' );} );
+
+Route::get( '/soporte', function () {return view( 'soporte' );} );
+
 
 //--------------------------------------------------
 //RUTA PARA MODIFICAR MIS DATOS
