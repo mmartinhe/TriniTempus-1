@@ -274,3 +274,7 @@ li {
     width: 807px;
     height: 116px;
 }
+/*.------------------------------estilos contacto redes sociales---------------*/
+#icon_social{
+	max-height: 100px;
+}
