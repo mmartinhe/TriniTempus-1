@@ -9,6 +9,7 @@
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
 @endif
+
 <!-------------------------------------contenido---------------------------------------------->
 <div class="content">
     <div class="title m-b-md">

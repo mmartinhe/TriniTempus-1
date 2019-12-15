@@ -175,7 +175,7 @@ img:hover {
 }
 #capa_footer {
     margin: 30px;
-    margin-top: -7px;
+    margin-top: -20px;
     transition: all 0.5s linear;
 }
 #capa_footer:hover {
@@ -254,10 +254,21 @@ li {
 #navbarDropdown {
     color: white;
 }
+
 /*---------------------vista cambiar foto de perfil---------------------------------*/
-/*        #capa_btn{
-            margin-top:500px;
-        }*/
+        
+#btnActualizar{
+   border-radius: 20px; 
+}
+#btnVolver{
+    border-radius: 20px;
+}
+
+#btnSeleccionar{
+    border-radius: 20px;
+    width: 460px;
+    height: 36
+}
 /*---------------------------estilos mensajes---------------------------------*/
 #textAreaServicios {
     width: 807px;
