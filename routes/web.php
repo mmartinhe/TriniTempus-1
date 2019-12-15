@@ -25,6 +25,8 @@ Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
 Route::get( '/mi_cuenta', function () { return view( 'mi_cuenta' ); } );
 
+Route::get( '/crear_servicio', function () { return view( 'crear_servicio' ); } );
+
 Route::get( '/contacto', function () {return view( 'contacto' );} );
 
 Route::get( '/ofertas', function () {return view( 'ofertas' );} );
@@ -48,6 +50,11 @@ Route::post('/modificarMisDatos', 'UsuariosController@modificarMisDatos');
 //RUTA PARA DARSE DE BAJA
 Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
 //----------------------------------------
+//RUTAS PARA MULTIMEDIA
+
+Route::get('/subir_img_multimedida', 'ServicioController@newImageService');
+
+//---------------------------------------
 //RUTAS DE FOTO DE PERFIL
 Route::get('/profile', 'UsuariosController@profile');
 Route::post('/updateprofile', 'UsuariosController@updateProfile');

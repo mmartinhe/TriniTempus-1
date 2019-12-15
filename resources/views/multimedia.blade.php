@@ -13,7 +13,28 @@
     <div class="title m-b-md">
         <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
     </div>
-    
+	<div>
+	<row class="col-3">
+				 <a href="{{url('subir_img_multimedia')}}"><input type="button" value="subir archivo" name=btnSubirArchivo></a>
+					 
+		
+	</row>	
+		<row class="col-3 offset-1">
+				<input type="button" value="ver mis archivos" name=btnVerArchivo>
+	</row>	
+		
+		
+		
+	</div>
+	
+	<div>
+	<row class="col-3">
+				<h1>PARTE DE GALERIA CUADRADO</h1>
+	</row>	
+	</div>
+    			
+				
+		
     
     
 </div>
