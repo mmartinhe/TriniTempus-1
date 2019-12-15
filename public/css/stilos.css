@@ -1,108 +1,265 @@
 /* CSS Document */
-
-        html,
-        body {
-			/*
+html, body {
+    /*-------------------------estilos body y html--------------------------------*/
+    /*
 			background-image: {{asset('img/negocio.jpg')}};
 			background-image: url({{asset('img/negocio.jpg')}})
 			*/
-            /*background-color: #A0E5EB;*/
-           /* background: rgba(182,194,237,1);*/
-
-            color: #636b6f;
-            font-family: 'Exo', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-            
-           /* background: -webkit-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
+    /*background-color: #A0E5EB;*/
+    /* background: rgba(182,194,237,1);*/
+    color: #636b6f;
+    font-family: 'Exo', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+    /* background: -webkit-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
             background:    -moz-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
             background:     -ms-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
             background:      -o-linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);
             background:         linear-gradient(90deg, #e74d6b 10%, #8cc8ac 90%);*/
-            
-            /*background: -webkit-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
+    /*background: -webkit-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
             background:    -moz-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
             background:     -ms-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
             background:      -o-linear-gradient(90deg, #65997d 10%, #fccb6e 90%);
             background:         linear-gradient(90deg, #65997d 10%, #fccb6e 90%);*/
-            
-			/*
+    /*
             background: -webkit-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:    -moz-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:     -ms-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:      -o-linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
             background:         linear-gradient(90deg, #4c515b 10%, #fccb6e 90%);
 				*/
-			background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
-			background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(32%, rgba(191,184,191,1)), color-stop(65%, rgba(191,184,191,1)), color-stop(100%, rgba(237,237,237,1)));
-			background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
-			background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
-			background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(191,184,191,1) 32%, rgba(191,184,191,1) 65%, rgba(237,237,237,1) 100%);
-        }
-        
-        
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .position-ref {
-            position: relative;
-        }
-        
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .fontColor {
-            color: #312828;
-        }
-        
-        .title {
-            font-size: 84px;
-        }
-        
-		.links>a{
-			color: white;
-			text-decoration: none;
-			font-size: 20px;
-			border: 2px thin ;
-			border-radius: 15px;
-			padding: 17px 25px;
-			margin: 10px;
-			background-color:  #B59B85;
-			opacity:0.8;
-			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		}
-        
-        .links> a:hover {
-			
-			background-color: #4c515b;
-            margin-top: 5px;
-            font-weight: bold;
-            transition: all 0.5s linear;
-            border-radius: 30px;
-            transform: scale(0.9);   
-            opacity:0.8;           
-			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		}
-		
-        
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-        
-        .container {
-            position: absolute;
-            margin-left: 590px;
-            margin-top: -400px;
-        }
-		
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(191, 184, 191, 1) 32%, rgba(191, 184, 191, 1) 65%, rgba(237, 237, 237, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(32%, rgba(191, 184, 191, 1)), color-stop(65%, rgba(191, 184, 191, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(191, 184, 191, 1) 32%, rgba(191, 184, 191, 1) 65%, rgba(237, 237, 237, 1) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(191, 184, 191, 1) 32%, rgba(191, 184, 191, 1) 65%, rgba(237, 237, 237, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(191, 184, 191, 1) 32%, rgba(191, 184, 191, 1) 65%, rgba(237, 237, 237, 1) 100%);
+}
+/*-----------------------------------estilos iniciales laravel-------------------------------------*/
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.position-ref {
+    position: relative;
+}
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+.content {
+    text-align: center;
+}
+.fontColor {
+    color: #312828;
+}
+.title {
+    font-size: 84px;
+}
+.links > a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px thin;
+    border-radius: 20px;
+    padding: 17px 25px;
+    margin: 10px;
+    background-color: #B59B85;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.links > a:hover {
+    background-color: #4c515b;
+    margin-top: 5px;
+    font-weight: bold;
+    transition: all 0.5s linear;
+    border-radius: 30px;
+    transform: scale(0.9);
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.m-b-md {
+    margin-bottom: 30px;
+}
+/*-----------------------estilos adicionales welcome-----------------------------------*/
+#capa_ultimos_servicios {
+    border-radius: 20px;
+    background-color: #CFCCC5;
+    height: 250px;
+}
+#capa_servicios_mas_solicitados {
+    border-radius: 20px;
+    background-color: #CFCCC5;
+}
+p {
+    font-weight: bold;
+}
+/*-----------------------estilos adicionales login-----------------------------------*/
+#logo {
+    margin-top: -300;
+}
+#capa_logueo {
+    position: absolute;
+    background-color: #A29080;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: -70px;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #343333;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* */
+    font-family: 'Exo', sans-serif;
+}
+#btn_entrar {
+    border-radius: 20px;
+}
+/*-----------------------estilos adicionales registro-----------------------------------*/
+#logo {
+    margin-top: -10px;
+}
+#capa_registro {
+    position: absolute;
+    background-color: #A29080;
+    width: 350px;
+    height: 370px;
+    border-radius: 20px;
+    margin-left: -100px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #343333;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* */
+    font-family: 'Exo', sans-serif;
+}
+#btn_registrar {
+    border-radius: 20px;
+}
+/*-------------------------estilos home--------------------------------------------------------*/
+#capa_contacto {
+    width: 80px;
+    height: 80px;
+    margin-left: -20px;
+    bottom: 50px;
+}
+#capa_soporte {
+    width: 50px;
+    height: 50px;
+    margin-left: 180px;
+}
+#capa_footer {
+    width: 500px;
+    height: 80px;
+    background-color: #A29080;
+    border-radius: 20px;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+.img {
+    margin: 30px;
+    transition: all 0.5s linear;
+    border-radius: 20px;
+}
+img:hover {
+    transform: scale(0.9);
+    border-radius: 20px;
+}
+#capa_footer {
+    margin: 30px;
+    margin-top: -7px;
+    transition: all 0.5s linear;
+}
+#capa_footer:hover {
+    transform: scale(0.9);
+    border-radius: 20px;
+    background-color: #4c515b;
+}
+.content flex-center {
+    margin: 30px;
+    transition: all 0.5s linear;
+}
+#encabezado {
+    width: 500px;
+}
+#capa {
+    width: 500px;
+}
+/*-----------------------estilos adicionales mi cuenta-----------------------------------*/
+#capa_datos {
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left: 55px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#capa_mensajes {
+    border-radius: 20px;
+    background-color: #A29080;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+table {
+    margin-left: 40px;
+}
+p {
+    font-weight: bold;
+    color: #342C2C
+}
+input {
+    border-radius: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+#foto {
+    padding-top: 20px;
+}
+#foto_perfil {
+    border-radius: 20px;
+}
+#btn_modificarFoto {
+    margin-top: 20px;
+    border-radius: 20px;
+}
+#btnBaja {
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+#btnModificarDatos {
+    border-radius: 20px;
+}
+#capa_logado {
+    position: absolute;
+    background-color: #B59B85;
+    opacity: 0.8;
+    border-radius: 20px;
+    left: -130px;
+    top: 70px;
+    padding: 0px;
+    width: 110px;
+}
+li {
+    list-style: none;
+}
+#navbarDropdown {
+    color: white;
+}
+/*---------------------vista cambiar foto de perfil---------------------------------*/
+/*        #capa_btn{
+            margin-top:500px;
+        }*/
+/*---------------------------estilos mensajes---------------------------------*/
+#textAreaServicios {
+    width: 807px;
+    height: 116px;
+}

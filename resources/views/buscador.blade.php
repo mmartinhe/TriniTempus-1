@@ -1,57 +1,19 @@
-
-    @extends('layouts.plantilla')
-    @section('content') 
-        <div class="container">
-
-
-            <div class="row header-calendar">
-
-                <div class="col" style="display: flex; justify-content: space-between; padding: 10px;">
-                    <a href="{{ asset('/Calendar/event/') }}/<?= $data['last']; ?>" style="margin:10px;">
-                        <i class="fas fa-chevron-circle-left" style="font-size:30px;color:white;"></i>
-                    </a>
-                
-
-            <h2 style="font-weight:bold;margin:10px;"><?= $mespanish; ?><small><?= $data['year']; ?></small </h2>
-                
-                    <a href="{{ asset('/Calendar/event/') }}/<?= $data['next']; ?>" style="margin:10px;">
-                        <i class="fas fa-chevron-circle-right" style="font-size:30px;color:white;"></i>
-                    </a>
-                
-
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col header-col">Lunes</div>
-                <div class="col header-col">Martes</div>
-                <div class="col header-col">Miercoles</div>
-                <div class="col header-col">Jueves</div>
-                <div class="col header-col">Viernes</div>
-                <div class="col header-col">Sabado</div>
-                <div class="col header-col">Domingo</div>
-            </div>
-            <!-- inicio de semana -->
-            @foreach ($data['calendar'] as $weekdata)
-            <div class="row">
-                <!-- ciclo de dia por semana -->
-                @foreach ($weekdata['datos'] as $dayweek) @if ($dayweek['mes']==$mes)
-                <div class="col box-day">
-                    {{ $dayweek['dia'] }}
-                    <!-- servicio -->
-                    @foreach ($dayweek['evento'] as $servicio)
-                    <a class="badge badge-primary" href="{{ asset('/Evento/details/') }}/{{ $servicio->id }}">
-                    {{ $servicio->titulo }} <!--PREMIOOOOOOOO ASI SE PASA EL IDDDDDDDDD XDDDDDD-->
-                  </a>
-                    @endforeach
-                </div>
-                @else
-                <div class="col box-dayoff">
-                </div>
-                @endif @endforeach
-            </div>
-            @endforeach
-
-        </div>
-    @endsection
-
+@extends( 'layouts.final' )
+@if( Route::has( 'login' ) )
+    <div class="top-right links">
+        @auth
+        <a href="{{ url('/home') }}">Home</a>
+        <a href="{{ url('/buscador') }}">Buscador </a> @else
+        <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
+        <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
+    </div>
+@endif
+<!-------------------------------------contenido---------------------------------------------->
+<div class="content">
+    <div class="title m-b-md">
+        <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
+    </div>
+    
+    
+    
+</div>

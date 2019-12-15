@@ -14,64 +14,11 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    
+     <!---css--->
+	<link rel="stylesheet" href="{{ asset('css/stilos.css')}}">
 
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #A0E5EB;
-            color: #636b6f;
-            font-family: 'Exo', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        .full-height {
-            height: 100vh;
-        }
-        
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .position-ref {
-            position: relative;
-        }
-        
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-        
-        .content {
-            text-align: center;
-        }
-        
-        .title {
-            font-size: 84px;
-        }
-        
-        .links> a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-        
-        /*---------------------------------------------------------------*/
-
-    </style>
+   
 </head>
 
 <body>
@@ -86,7 +33,7 @@
     </div>
     @endif
     <br><br><br>
-    <!-------------------------------------------contenido---------------------------------------------->
+    <!---------------------------------------contenido---------------------------------------------->
     <div class="content">
         <div class="title m-b-md">
             <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
@@ -95,7 +42,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <section id="capa_btn">
+                    <section id="capa_btn" class="flex-cente">
                         <h1 id="titulo">Cambiar imagen de perfil</h1>
                         <form id="formulario" method='post' action='{{url("updateprofile")}}' enctype='multipart/form-data'>
                             {{csrf_field()}}
