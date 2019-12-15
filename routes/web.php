@@ -69,18 +69,21 @@ Route::get('mensajes', 'MensajesController@mostrarTodosVistaMensajes');
 Route::get('Calendar/event/{mes}','CalendarioController@index_month');
 Route::get('Calendar/event','CalendarioController@index');
 //--------------------------------------------------
-//RUTAS PARA LOS SERVICIOS
+//RUTAS PARA LOS EVENTOS DEL CALENDARIO
 Route::get('Evento/form','ServicioController@form');
 Route::post('Evento/create','ServicioController@create');
 Route::get('Evento/details/{id}','ServicioController@details');
 Route::get('ofertas','ServicioController@index');
 Route::get('Evento/index/{month}','ServicioController@index_month');
 Route::post('Evento/calendario','ServicioController@calendario');
+
 //--------------------------------------------------
-//PARA MOSTRAR CALENDARIO EN MI CUENTA 
-/*Route::get('buscador','ServicioController@index');*/
+//RUTAS PARA LOS SERVICIOS OFRECIDOS POR UN USUARIO
+Route::post('Servicio/create','ServicioController@createServicio');
 
 
+//--------------------------------------------------
+//RUTAS PARA BUSCADOR
 
 
 

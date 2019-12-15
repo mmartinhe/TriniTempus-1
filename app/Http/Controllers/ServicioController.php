@@ -4,6 +4,7 @@ namespace App\ Http\ Controllers;
 
 use Illuminate\ Http\ Request;
 use App\Servicio;
+use App\MiServicio;
 
 class ServicioController extends Controller {
     
@@ -12,11 +13,12 @@ class ServicioController extends Controller {
       return view("formulario_servicio");
     }
 
+    /*esta funcion crea un evento en el calendario*/
+    
     public function create(Request $request){
 
-      $this->validate($request, [
-          
-        'id_usuario'  =>  'required',  
+      $this->validate($request, [         
+        'id_usuario'  =>  'required',  // prueba aqui para guardar el id del usuario que esta logado 
         'titulo' => 'required',
         'ciudad'  =>  'required',
         'categoria'  =>  'required',
@@ -26,7 +28,7 @@ class ServicioController extends Controller {
      ]);
 
       Servicio::insert([
-        'id_usuario'       => $request->input("id_usuario"),
+        'id_usuario'       => $request->input("id_usuario"), // prueba aqui para guardar el id del usuario que esta logado 
         'titulo' => $request->input("titulo"),
         'ciudad'  => $request->input("ciudad"),
         'categoria'        => $request->input("categoria"),
@@ -38,7 +40,26 @@ class ServicioController extends Controller {
       return back()->with('success', 'Enviado exitosamente!');
 
     }
+    
+    public function createServicio(Request $request){
+        $this->validate($request, [         
+        'id_usuario'  =>  'required',  
+        'ciudad'  =>  'required',
+        'categoria'  =>  'required',
+        'sub_categoria'  =>  'required',
+     ]);
 
+      MiServicio::insert([
+        'id_usuario'       => $request->input("id_usuario"),
+        'ciudad'  => $request->input("ciudad"),
+        'categoria'        => $request->input("categoria"),
+        'sub_categoria'        => $request->input("sub_categoria"),
+      ]);
+
+      return back()->with('success', 'Enviado exitosamente!');
+    }
+    
+    /*esta funcion es para mostrar los detalles de un evento del calendario*/
     public function details($id){
         
         //echo "llegooooo" . $id_servicio;

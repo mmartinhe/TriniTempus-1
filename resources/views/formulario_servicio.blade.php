@@ -10,13 +10,6 @@
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
 @endif
-
-<style>
-
-
-
-
-</style>
 <!-------------------------------------contenido---------------------------------------------->
 <div class="content">
     <div class="title m-b-md">
@@ -80,34 +73,6 @@
                     <p>Hora:&nbsp&nbsp
                         <input type="time" name="hora" placeholder="Introduce la hora..."></input>
                     </p>              
-                    <!--<div class="fomr-group">
-                        <label >Titulo</label>
-                        <input type="text" class="form-control" name="titulo">
-                    </div>
-                    <div class="fomr-group">
-                        <label>Id usuario</label>
-                        <input type="text" class="form-control" name="id_usuario">
-                    </div>
-                    <div class="fomr-group">
-                        <label>Ciudad</label>
-                        <input type="text" class="form-control" name="ciudad">
-                    </div>
-                    <div class="fomr-group">
-                        <label>Categoria</label>
-                        <input type="text" class="form-control" name="categoria">
-                    </div>
-                    <div class="fomr-group">
-                        <label>Subcategoria</label>
-                        <input type="text" class="form-control" name="sub_categoria">
-                    </div>
-                    <div class="fomr-group">
-                        <label>Fecha</label>
-                        <input type="date" class="form-control" name="fecha">
-                    </div>
-                    <div class="fomr-group">
-                        <label>hora</label>
-                        <input type="time" class="form-control" name="hora">
-                    </div>-->
                     <br>
                     <input type="submit" class="btn btn-info" value="Guardar" id="btnGuardar">
                 </form>

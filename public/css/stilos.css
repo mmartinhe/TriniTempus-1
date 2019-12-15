@@ -338,7 +338,23 @@ label{
     height: 500px;
 }
 
+/*.------------------------------estilos formulario crear servicio---------------*/
 
+.form-control {
+    height: 25px;
+}
+#formulario_crear_evento {
+    margin-left: -30px;
+}
+
+#capa_crear_servicio{
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left: 0px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 350px;
+}
 
 
 
