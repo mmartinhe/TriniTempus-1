@@ -18,6 +18,7 @@
         <a class="" href="{{url('/mi_cuenta')}}">Mi cuenta</a>
     
         <a href="{{url('/ofertas')}}">Agenda</a>
+        <a href="{{url('/crear_servicio')}}">Crear Servicio</a>
         <a href="{{url('/buscador')}}">Buscador</a>
         <a href="{{url('/mensajes')}}">Mensajes</a>
         <a href="{{url('/multimedia')}}">Multimedia</a>
