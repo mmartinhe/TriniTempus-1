@@ -1,4 +1,5 @@
 @extends( 'layouts.final' )
+<link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 @if( Route::has( 'login' ) )
     <div class="top-right links">
         @auth
@@ -9,7 +10,7 @@
 @endif
 <!------------------------------------contenido---------------------------------------------->
 <div class="content">
-    
+   
     <div class="title m-b-md">
         <a id="capa" class="fondo" href="{{ url('home')}}"><img id="encabezado" src="{{ asset('img/logo.png')}}"style='max-width: 180px'/></a>
     </div>

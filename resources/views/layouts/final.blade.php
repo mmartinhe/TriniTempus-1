@@ -7,8 +7,6 @@
 
     <title>TriniTempus</title>
 
-    <!--icono pestaña-->
-    <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
 

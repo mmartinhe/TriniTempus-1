@@ -1,4 +1,5 @@
 @extends( 'layouts.final' )
+<link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 @if( Route::has( 'login' ) )
     <div class="top-right links">
         @auth
@@ -26,13 +27,18 @@
                                 <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
                                 <div id="datos_usuario" class="mt-2">
                                     <h2 class="titulo">Datos Usuario</h2>
+                                    
                                     <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
-                                    <p id="usuario">Usuario:&nbsp&nbsp<input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
+                                    <p id="usuario">Usuario:&nbsp&nbsp
+                                        <input name="usuario" placeholder="{{ auth()->user()->name}}"></input>
                                     </p>
-                                    <p id="correo">E-mail:&nbsp&nbsp<input name="email" placeholder="{{ auth()->user()->email}}"></input>
+                                    <p id="correo">E-mail:&nbsp&nbsp
+                                        <input name="email" placeholder="{{ auth()->user()->email}}"></input>
                                     </p>
-                                    <p id="ciudad">Ciudad:&nbsp&nbsp<input name="ciudad" placeholder="{{ auth()->user()->ciudad}}"></input>
+                                    <p id="ciudad">Ciudad:&nbsp&nbsp
+                                        <input name="ciudad" placeholder="{{ auth()->user()->ciudad}}"></input>
                                     </p>
+            
                                     <div>
                                         <input type="submit" value="Modificar datos" id="btnModificarDatos">
                                     </div>

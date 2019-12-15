@@ -254,17 +254,14 @@ li {
 #navbarDropdown {
     color: white;
 }
-
 /*---------------------vista cambiar foto de perfil---------------------------------*/
-        
-#btnActualizar{
-   border-radius: 20px; 
-}
-#btnVolver{
+#btnActualizar {
     border-radius: 20px;
 }
-
-#btnSeleccionar{
+#btnVolver {
+    border-radius: 20px;
+}
+#btnSeleccionar {
     border-radius: 20px;
     width: 460px;
     height: 36
@@ -275,6 +272,106 @@ li {
     height: 116px;
 }
 /*.------------------------------estilos contacto redes sociales---------------*/
-#icon_social{
-	max-height: 100px;
+#icon_social {
+    max-height: 100px;
 }
+/*.------------------------------estilos calendario---------------*/
+.header-col {
+    background: #E3E9E5;
+    color: #536170;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.header-calendar {
+    background: #EE192D;
+    color: white;
+}
+.box-day {
+    border: 1px solid #E3E9E5;
+    height: 150px;
+}
+.box-dayoff {
+    border: 1px solid #E3E9E5;
+    height: 150px;
+    background-color: #ccd1ce;
+}
+#logo {
+    margin-left: 150px;
+}
+/*.------------------------------estilos ofertas---------------*/
+/*son los mismos que la vista calendar */
+
+
+
+/*.------------------------------estilos vista_servicios---------------*/
+
+#capa_vista_evento {
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left: 10px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label{
+        font-weight: bold;
+        color: #342C2C
+    }
+
+
+
+/*.------------------------------estilos formulario crear evento---------------*/
+.form-control {
+    height: 25px;
+}
+#formulario_crear_evento {
+    margin-left: -30px;
+}
+
+#capa_crear_evento{
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left: 0px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

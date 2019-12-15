@@ -1,4 +1,5 @@
 @extends('layouts.final')
+<link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 	@if (Route::has('login'))
 	<div class="top-right links">
 		@auth
