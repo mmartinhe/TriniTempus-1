@@ -49,4 +49,22 @@ class MensajesController extends Controller
 		}
     return view('mensajes')->with('mensajes',$mensajesUsuario);
 	}*/
+	
+	public function crearMensaje(Request $request){
+		$this->validate($request, [         
+        'textoBuscar'  =>  'required',  
+        'servicios'  =>  'required',
+        'mensaje'  =>  'required',
+     ]);
+		Mensaje::insert([
+		'emisor'       => $request->input("textoBuscar"),
+		'receptor'	=> "3",
+        'contenido'  => $request->input("mensaje"),
+        'tipo'        => "publico"
+      ]);
+		
+		
+      return back()->with('success', 'Enviado exitosamente!');
+    }
+	
 }

@@ -15,8 +15,27 @@
     </div>
     <h1>Tus mensajes</h1>
     <div class="col-sm-12">
-        <h1>Crear Mensaje</h1>
-        <form action="{{url('/mensajes')}}" method="post" id="crearMensaje">
+		
+		<p class="lead">
+
+        <a class="btn btn-info mt-2 " href="{{ asset('home') }}">Atras</a>
+        <hr> @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+        @endif
+    </p>
+        <form action="{{ asset('/mensajes') }}" method="post" id="crearMensaje">
             <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
             <div class="row-sm-12" id="datos_contacto">
                 <p id="usuario">Usuario a buscar:&nbsp&nbsp
@@ -37,7 +56,7 @@
                 <br>
                 <input type="radio" name="tipo">privado</input>
                 <br>
-                <input type="button" name="botonEnviar" value="Enviar"></input>
+                <input type="submit" class="btn btn-info" name="botonEnviar" value="Enviar"></input>
             </div>
         </form>
     </div>
