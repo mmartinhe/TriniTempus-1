@@ -12,7 +12,7 @@
 <!--contenido--->
 	<div class="content">
 		<div class="title m-b-md">
-			<a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
+			<a id="capa" href="{{ url('/')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
 		</div>
 		<!--  <h1>VISTA CONTACTO</h1>   -->
 		<div class="container">
