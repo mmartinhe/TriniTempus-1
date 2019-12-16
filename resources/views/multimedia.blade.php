@@ -18,7 +18,7 @@
 	<row class="col-3">
 				 <a href="{{url('subir_img_multimedia')}}"><input type="button" value="subir archivo" name=btnSubirArchivo></a>
 					 
-		
+                          
 	</row>	
 		<row class="col-3 offset-1">
 				<input type="button" value="ver mis archivos" name=btnVerArchivo>
@@ -31,6 +31,7 @@
 	<div>
 	<row class="col-3">
 				<h1>PARTE DE GALERIA CUADRADO</h1>
+		  <img id="foto_perfil" src='{{url(Auth::user()->multimedia)}}' class='img-responsive' style='max-width: 200px'/>
 	</row>	
 	</div>
     			

@@ -39,7 +39,8 @@ Route::get( '/administrador', function () {return view( 'administrador' );} );
 
 Route::get( '/buscador', function () {return view( 'buscador' );} );
 
-Route::get( '/soporte', function () {return view( 'soporte' );} );
+Route::get( '/soporte', function () {
+	return view( 'soporte' );} );
 
 
 //--------------------------------------------------
@@ -52,7 +53,7 @@ Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
 //----------------------------------------
 //RUTAS PARA MULTIMEDIA
 
-Route::get('/subir_img_multimedida', 'MultimediaController@updateMultimedia');
+Route::get('/subir_img_multimedia', 'MultimediaController@updateMultimedia');
 
 //---------------------------------------
 //RUTAS DE FOTO DE PERFIL
