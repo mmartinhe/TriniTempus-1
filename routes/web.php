@@ -83,7 +83,7 @@ Route::post('Servicio/create','ServicioController@createServicio');
 
 //--------------------------------------------------
 //RUTAS PARA MOSTRAR LOS SERVICIOS OFRECIDOS POR UN USUARIO EN MI CUENTA
-Route::get('mi_cuenta', 'ServicioController@mostrarTodos');
+/*Route::get('mi_cuenta', 'ServicioController@mostrarTodos');*/
 Route::get('/', 'ServicioController@mostrarTodosEnWelcome'); //MOSTRARLOS EN WELCOME
 // va a petar cuando le pase los ultimos servicios 
 //como en mi cuenta al pasarle mensajes, y servicios PREGUNTAAAA!!!

@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mensaje;
+use App\MiServicio;
 
 class MensajesController extends Controller
 {
     function mostrarTodos() {
-        
-    $mensajes = Mensaje::all();
-    //return view('mensajes.index', compact('mensajes'));
-    return view('mi_cuenta')->with('mensajes',$mensajes);
-        
+  
+        $mensajes = Mensaje::all();
+        $misServicios = MiServicio::all();
+
+        return view('mi_cuenta', 
+                    ['mensajes' => $mensajes,
+                     'misServicios' => $misServicios]);
         
         
         

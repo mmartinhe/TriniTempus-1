@@ -111,7 +111,84 @@
 <!-------------segunda fila para vista de mensajes enviados y recibidos --------------------------------------->
 
         <div class="row">
-                     
+            <div class="col-5" id="capa_mensajes_recibidos">
+                <h2 class="titulo">Mensajes recibidos</h2>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        @if ($mensajes->isEmpty())
+                        <div>No hay Mensajes</div>
+                        @else
+                        <table class="table table-striped ">
+                            <!--table table-hover table-dark-->
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Emisor</th>
+                                    <th>Receptor</th>
+                                    <th>Contenido</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($mensajes as $mensaje)
+                                <tr>
+                                    <td>{!! $mensaje->id_mensaje !!}</td>
+                                    <td>{!! $mensaje->emisor !!}</td>
+                                    <td>{!! $mensaje->receptor !!}</td>
+                                    <td>{!! $mensaje->contenido !!}</td>
+                                    <td>{!! $mensaje->tipo !!}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 ">
+                <p></p>
+            </div>
+
+            <div class="col-5" id="capa_mensajes_enviados">
+                <h2 class="titulo">Mensajes enviados</h2>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        @if ($mensajes->isEmpty())
+                        <div>No hay Mensajes</div>
+                        @else
+                        <table class="table table-striped ">
+                            <!--table table-hover table-dark-->
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Emisor</th>
+                                    <th>Receptor</th>
+                                    <th>Contenido</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($mensajes as $mensaje)
+                                <tr>
+                                    <td>{!! $mensaje->id_mensaje !!}</td>
+                                    <td>{!! $mensaje->emisor !!}</td>
+                                    <td>{!! $mensaje->receptor !!}</td>
+                                    <td>{!! $mensaje->contenido !!}</td>
+                                    <td>{!! $mensaje->tipo !!}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @endif
+                    </div>
+                </div>
+            </div>          
         </div> <!--row mensajes-->
     </div> <!--container-->
 </div> <!--content-->
