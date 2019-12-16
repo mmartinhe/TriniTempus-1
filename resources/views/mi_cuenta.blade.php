@@ -22,11 +22,11 @@
             <div class="col-sm-12 col-md-6 col-lg-5 " id="capa_datos">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6 ">
-                        <div id="mis_datos" class="links">
+                        <div id="mis_datos">
                             <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                 <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
                                 <div id="datos_usuario" class="mt-2">
-                                    <h2 class="titulo">Datos Usuario</h2>
+                                    <h2 class="titulo">Datos usuario</h2>
                                     
                                     <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
                                     <p id="usuario">Usuario:&nbsp&nbsp
@@ -65,38 +65,38 @@
                 </div>
             </div>
             <div class="col-1 ">
-                <p>BLANCO 1</p>
+                <p></p>
             </div>
 
-            <div class="col-5" id="capa_mensajes">
-                <h2 class="titulo">Mensajes</h2>
+            <div class="col-5" id="capa_mis_servicios">
+                <h2 class="titulo">Mis servicios</h2>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
                         </div>
-                        @if ($mensajes->isEmpty())
-                        <div>No hay Mensajes</div>
+                        @if ($misServicios->isEmpty())
+                        <div>No hay Servicios</div>
                         @else
-                        <table class="table table-striped ">
+                        <table id="tabla_mis_servicios" class="table table-striped ">
                             <!--table table-hover table-dark-->
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Emisor</th>
-                                    <th>Receptor</th>
-                                    <th>Contenido</th>
-                                    <th>Tipo</th>
+                                    <th>Id_servicio</th>
+                                    <th>Id_usuario</th>
+                                    <th>Ciudad</th>
+                                    <th>Categoria</th>
+                                    <th>Sub_categoria</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($mensajes as $mensaje)
+                                @foreach($misServicios as $servicio)
                                 <tr>
-                                    <td>{!! $mensaje->id_mensaje !!}</td>
-                                    <td>{!! $mensaje->emisor !!}</td>
-                                    <td>{!! $mensaje->receptor !!}</td>
-                                    <td>{!! $mensaje->contenido !!}</td>
-                                    <td>{!! $mensaje->tipo !!}</td>
+                                    <td>{!! $servicio->id !!}</td>
+                                    <td>{!! $servicio->id_usuario !!}</td>
+                                    <td>{!! $servicio->ciudad !!}</td>
+                                    <td>{!! $servicio->categoria !!}</td>
+                                    <td>{!! $servicio->sub_categoria !!}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -107,26 +107,11 @@
             </div>
         </div>
         </BR>
+
+<!-------------segunda fila para vista de mensajes enviados y recibidos --------------------------------------->
+
         <div class="row">
-            <div class="col-1 bg-success">
-                <p>BLANCO 1</p>
-            </div>
-            <div class="col-4 bg-primary">
-                <p>MIS ARCHIVOS</p>
-            </div>
-
-            <div class="col-2 bg-success">
-                <p>BLANCO 2</p>
-            </div>
-
-            <div class="col-4 bg-primary">
-                <p>MIS SERVICIOS</p>
-            </div>
-
-            <div class="col-1 bg-success">
-                <p>BLANCO 1</p>
-            </div>
-        </div>
-
-    </div>
-</div>
+                     
+        </div> <!--row mensajes-->
+    </div> <!--container-->
+</div> <!--content-->

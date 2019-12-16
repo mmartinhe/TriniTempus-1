@@ -59,6 +59,27 @@ class ServicioController extends Controller {
       return back()->with('success', 'Enviado exitosamente!');
     }
     
+    /* esta funcion muestra todos los servicios en mi cuenta*/
+    
+    function mostrarTodos() {
+        
+        $misServicios = MiServicio::all();
+        return view('mi_cuenta')->with('misServicios',$misServicios);
+
+	}
+    
+    /* esta funcion muestra todos los servicios en welcome*/
+    public function mostrarTodosEnWelcome(){
+        $misServicios = MiServicio::all();
+        return view('/welcome')->with('misServicios',$misServicios);
+    }
+    
+    /* esta funcion muestra todos los servicios en crear_servicio*/    
+    public function mostrarTodosEnCearServicio(){
+        $misServicios = MiServicio::all();
+        return view('/crear_servicio')->with('misServicios',$misServicios);
+    }
+    
     /*esta funcion es para mostrar los detalles de un evento del calendario*/
     public function details($id){
         

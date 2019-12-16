@@ -87,14 +87,25 @@ html, body {
 #capa_ultimos_servicios {
     border-radius: 20px;
     background-color: #CFCCC5;
-    height: 250px;
+    margin-left: 55px;
+    opacity: 0.8;
+    width: 200px;
 }
 #capa_servicios_mas_solicitados {
-    border-radius: 20px;
-    background-color: #CFCCC5;
+   border-radius: 20px;
+   background-color: #CFCCC5;
+   opacity: 0.8;
 }
 p {
     font-weight: bold;
+}
+
+#tabla_ultimos_servicios{
+    margin-left: 0px;
+}
+
+#tabla_mas_solicitados{
+    margin-left: 0px;
 }
 /*-----------------------estilos adicionales login-----------------------------------*/
 #logo {
@@ -104,7 +115,7 @@ p {
     position: absolute;
     background-color: #A29080;
     width: 300px;
-    height: 300px;
+    height: 330px;
     border-radius: 20px;
     margin-left: -70px;
     margin-top: 30px;
@@ -196,19 +207,51 @@ img:hover {
 /*-----------------------estilos adicionales mi cuenta-----------------------------------*/
 #capa_datos {
     border-radius: 20px;
-    background-color: #A29080;
+    /*background-color: #A29080;*/
+    background-color: #CFCCC5;
     margin-left: 55px;
     opacity: 0.8;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#capa_mensajes {
+
+#capa_mis_servicios{
     border-radius: 20px;
     background-color: #A29080;
     opacity: 0.8;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-table {
+
+#capa_mensajes_recibidos {
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left: 55px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#capa_mensajes_enviados {
+    border-radius: 20px;
+    background-color: #A29080;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#capa_logado {
+    position: absolute;
+    background-color: #B59B85;
+    opacity: 0.8;
+    border-radius: 20px;
+    left: -130px;
+    top: 70px;
+    padding: 0px;
+    width: 110px;
+}
+
+/*table {
     margin-left: 40px;
+}*/
+#tabla_mis_servicios{
+    margin-left: 25px;
 }
 p {
     font-weight: bold;
@@ -238,19 +281,7 @@ input {
 #btnModificarDatos {
     border-radius: 20px;
 }
-#capa_logado {
-    position: absolute;
-    background-color: #B59B85;
-    opacity: 0.8;
-    border-radius: 20px;
-    left: -130px;
-    top: 70px;
-    padding: 0px;
-    width: 110px;
-}
-li {
-    list-style: none;
-}
+
 #navbarDropdown {
     color: white;
 }
@@ -304,7 +335,7 @@ li {
 
 
 
-/*.------------------------------estilos vista_servicios---------------*/
+/*.------------------------------estilos vista_servicios ver eventos ya hechos ---------------*/
 
 #capa_vista_evento {
     border-radius: 20px;
@@ -353,7 +384,21 @@ label{
     margin-left: 0px;
     opacity: 0.8;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 350px;
+    height: 380px;
+}
+
+#capa_mis_servicios_crear{
+    border-radius: 20px;
+    background-color: #A29080;
+    margin-left:275px;
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#tabla_mis_servicios_crear{
+    
+
 }
 
 
