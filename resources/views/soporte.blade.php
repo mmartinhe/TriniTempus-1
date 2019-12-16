@@ -28,16 +28,20 @@
 
 				<div class="col-sm-12 col-md-6 col-lg-4  offset-3">
 					<h1>Formulario de Contacto</h1>
-					<form action="{{url('/vistaFormularioContacto')}}" method="post" id="formulario">
-						<input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
-						<div id="datos_contacto" class="mt-2">
-							<p id="Email">Email:&nbsp&nbsp<input name="Email"></input>
-							</p>
-							<p id="asunto">Asunto:&nbsp&nbsp<input name="asunto"></input>
-							</p>
-							<p id="mensaje">Mensaje:&nbsp&nbsp<textarea name="mensaje"> </textarea></p>
-								<input type="submit" value="Enviar" id="btnEnviarFormularioContacto">
-						</div>
+					<form action="{{url('/soporte')}}" method="post" id="formulario">
+					{{ csrf_field() }}
+					<div class="form-group">
+						<label for="name">Nombre</label>
+						<input name="name" type="text">
+					</div>
+					<div class="form-group">
+						<label for="name">Mensaje</label>
+												<input name="msg" type="text">
+					</div>
+					<div class="form-group">
+						<button type="submit" id='btn-contact' class="btn">Enviar</button>
+					</div>
+				</form>
 					</form>
 				</div>
 			</div>

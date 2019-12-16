@@ -95,10 +95,10 @@ Route::get('crear_servicio', 'ServicioController@mostrarTodosEnCearServicio'); /
 //--------------------------------------------------
 //RUTAS PARA BUSCADOR
 
+//RUTAS PARA SOPORTE
+//------------------------
 
-
-
-
+Route::post('/soporte', 'SoporteController@contact')->name('contact');
 
 
 
