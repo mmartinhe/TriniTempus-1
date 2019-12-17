@@ -7,8 +7,9 @@ use App\Multimedia;
 
 class MultimediaController extends Controller
 {
+	
     public function updateMultimedia( Request $request ) {
-       $request->file('archivo')->store('public');
-        dd("subido y guardado");
+       $request->file('archivo')->storeAs('img',[request()->file('archivo')]);
+        ("subido y guardado");
     }
 }
