@@ -103,8 +103,37 @@ Route::post('/soporte', 'SoporteController@contact')->name('contact');
 
 //--------------------------------------------------
 //RUTAS PARA ADMINISTRADORES
+/*---------------------para el login  -----------------------------*/
 /*Route::get('admins/logins', 'AdministratorsController@showLoginForm');*/
-
 Route::get( 'admins/login', function () {return view( 'administrators.login' );} );
 Route::post('admins/area', 'AdministratorsController@loginAdmin');
+
+/*---------------------para la administracion  -----------------------------*/
+
+                                /*ELIMINAR*/
+Route::post('Admin/anadirCiudad','AdministratorsController@anadirCiudad');
+Route::post('/Admin/anadirCategoria','AdministratorsController@anadirCategoria');
+Route::post('/Admin/anadirSubCategoria','AdministratorsControllerr@anadirSubCategoria');
+
+                                /*ELIMINAR*/
+Route::post('/Admin/eliminarCiudad','AdministratorsController@eliminarCiudad');
+Route::post('/Admin/anadirCiudad','AdministratorsController@anadirCiudad');
+Route::post('/Admin/anadirCiudad','AdministratorsController@anadirCiudad');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

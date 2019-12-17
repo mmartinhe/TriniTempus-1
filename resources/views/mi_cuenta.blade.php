@@ -135,7 +135,7 @@
                             <tbody>
                                 @foreach($mensajes as $mensaje)
                                 <tr>
-                                    <td>{!! $mensaje->id_mensaje !!}</td>
+                                    <td>{!! $mensaje->id !!}</td>
                                     <td>{!! $mensaje->emisor !!}</td>
                                     <td>{!! $mensaje->receptor !!}</td>
                                     <td>{!! $mensaje->contenido !!}</td>
@@ -176,7 +176,7 @@
                             <tbody>
                                 @foreach($mensajes as $mensaje)
                                 <tr>
-                                    <td>{!! $mensaje->id_mensaje !!}</td>
+                                    <td>{!! $mensaje->id !!}</td>
                                     <td>{!! $mensaje->emisor !!}</td>
                                     <td>{!! $mensaje->receptor !!}</td>
                                     <td>{!! $mensaje->contenido !!}</td>

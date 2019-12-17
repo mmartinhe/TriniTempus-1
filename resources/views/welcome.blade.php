@@ -23,7 +23,7 @@
 	</div>
 	        
     <br>
-        <div class="container-fluid tex-center py-auto ">
+        <div id="banner" class="container-fluid tex-center py-auto ">
         <div class="row">
             
             <div class="col-5" id="capa_ultimos_servicios">

@@ -107,9 +107,13 @@ p {
 
 #tabla_mas_solicitados{
     margin-left: 0px;
-};
+}
 #banner{
 	border-radius: 100px;
+}
+
+#banner{
+    border-radius: 20px;
 }
 
 
