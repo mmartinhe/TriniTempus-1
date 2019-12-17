@@ -10,7 +10,7 @@
     <link rel="ICON" type="iMAGEN/PNG" href="{{ asset('img/pestaña.png')}}"/>
 
     <!---css--->
-    <link rel="stylesheet" href="css/stilos.css">
+    <link rel="stylesheet" href="../css/stilos.css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -25,7 +25,7 @@
             <a href="{{ url('/home') }}">Home</a> @else
             <a href="{{ route('login') }}">Logarse</a> 
             <a href="{{ url('admins/login') }}">Logarse admin</a>@if (Route::has('register'))
-            <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
+            <a href="{{ route('register') }}">Registrarse</a>@endif @endauth
         </div>
         @endif
 
@@ -38,7 +38,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">{{ __('Login') }}
+                            <div class="card-header">{{ __('Login Admin') }}
                             </div>
                             <br>
                             <div class="card-body">

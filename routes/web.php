@@ -92,19 +92,18 @@ Route::get('/', 'ServicioController@mostrarTodosEnWelcome'); //MOSTRARLOS EN WEL
 
 Route::get('crear_servicio', 'ServicioController@mostrarTodosEnCearServicio'); //MOSTRARLOS EN VISTA CREAR SERVICIOS
 
-
-
 //--------------------------------------------------
 //RUTAS PARA BUSCADOR
 
-//RUTAS PARA SOPORTE
 //------------------------
+//RUTAS PARA SOPORTE
 
 Route::post('/soporte', 'SoporteController@contact')->name('contact');
 
 
+//--------------------------------------------------
+//RUTAS PARA ADMINISTRADORES
+/*Route::get('admins/logins', 'AdministratorsController@showLoginForm');*/
 
-
-
-
+Route::get( 'admins/login', function () {return view( 'administrators.login' );} );
 

@@ -5,7 +5,9 @@
         @auth
         <a href="{{ url('/home') }}">Home</a>
         <a href="{{ url('/') }}">Welcome </a> @else
-        <a href="{{ route('login') }}">Logarse</a> @if (Route::has('register'))
+        <a href="{{ url('admins/login') }}">Logarse admin</a>
+        <a href="{{ route('login') }}">Logarse</a> 
+        @if (Route::has('register'))
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
 @endif
