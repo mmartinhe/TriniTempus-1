@@ -16,7 +16,13 @@
     </div>
 	<div>
 	<row class="col-3">
-				 <a href="{{url('subir_img_multimedia')}}"><input type="button" value="subir archivo" name=btnSubirArchivo></a>
+		<!-- <a href="{{url('subir_img_multimedia')}}"><input type="button" value="subir archivo" name=btnSubirArchivo></a>  -->
+		<form method="POST" action="{{route('subir')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+  {{ csrf_field() }}
+  <label for="archivo"><b>Archivo: </b></label><br>
+  <input type="file" name="archivo" required>
+  <input class="btn btn-success" type="submit" value="Enviar" >
+</form>
 					 
                           
 	</row>	
@@ -31,7 +37,10 @@
 	<div>
 	<row class="col-3">
 				<h1>PARTE DE GALERIA CUADRADO</h1>
-		  <img id="foto_perfil" src='{{url(Auth::user()->multimedia)}}' class='img-responsive' style='max-width: 200px'/>
+		
+		<!--
+		<img id="foto_perfil" src='{{url(Auth::multimedias()->archivo)}}' class='img-responsive' style='max-width: 200px'/>
+-->
 	</row>	
 	</div>
     			

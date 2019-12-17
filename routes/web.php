@@ -53,7 +53,7 @@ Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
 //----------------------------------------
 //RUTAS PARA MULTIMEDIA
 
-Route::get('/subir_img_multimedia', 'MultimediaController@updateMultimedia');
+Route::get('/subir', 'MultimediaController@updateMultimedia')->name('subir');
 
 //---------------------------------------
 //RUTAS DE FOTO DE PERFIL
