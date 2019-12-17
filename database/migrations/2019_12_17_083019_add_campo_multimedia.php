@@ -12,8 +12,10 @@ class AddCampoMultimedia extends Migration
      * @return void
      */
      public function up() {
-        Schema::table( 'users', function ( $table ) {
-            $table->string( 'multimedia');
+        Schema::table( 'multimedias', function ( Blueprint $table ) {
+           $table->bigIncrements('id');
+			$table->integer('id_usuario');
+			$table->string('archivo');
         } );
     }
 
@@ -24,9 +26,8 @@ class AddCampoMultimedia extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
-            $table->dropColumn('multimedia');
-        });
+			Schema::dropIfExists('multimedias');
+
     
     }
 }
