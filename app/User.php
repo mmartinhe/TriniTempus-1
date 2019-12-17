@@ -11,6 +11,10 @@ class User extends Authenticatable
     use Notifiable;
     public $timestamps = false;
     
+    public function roles() { 
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
+    
     
     protected $fillable = [
         'name', 'apellidos', 'ciudad', 'email', 'password', 'avatar','multimedia' 

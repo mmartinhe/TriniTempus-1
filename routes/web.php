@@ -106,4 +106,5 @@ Route::post('/soporte', 'SoporteController@contact')->name('contact');
 /*Route::get('admins/logins', 'AdministratorsController@showLoginForm');*/
 
 Route::get( 'admins/login', function () {return view( 'administrators.login' );} );
+Route::post('admins/area', 'AdministratorsController@loginAdmin');
 
