@@ -16,9 +16,12 @@
 <div class="content ">
     <div class="title m-b-md">
         <a id="capa" href="{{ url('/')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
-        <h1 class="display-2 font-italic">Página especializada en servicios </h1>
-        <h1 class="display-4 font-italic">crea los tuyos, solicita los de otros. </h1>
-    </div>
+    </div>	
+	<div class="content">
+		<img class="banner" src="img/Especializados en servicios.png">
+
+	</div>
+	        
     <br>
         <div class="container-fluid tex-center py-auto ">
         <div class="row">

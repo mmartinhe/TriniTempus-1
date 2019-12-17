@@ -83,6 +83,7 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+
 /*-----------------------estilos adicionales welcome-----------------------------------*/
 #capa_ultimos_servicios {
     border-radius: 20px;
@@ -106,7 +107,12 @@ p {
 
 #tabla_mas_solicitados{
     margin-left: 0px;
+};
+#banner{
+	border-radius: 100px;
 }
+
+
 /*-----------------------estilos adicionales login-----------------------------------*/
 #logo {
     margin-top: -300;
