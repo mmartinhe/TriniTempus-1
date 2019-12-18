@@ -110,15 +110,15 @@ Route::post('admins/area', 'AdministratorsController@loginAdmin');
 
 /*---------------------para la administracion  -----------------------------*/
 
-                                /*ELIMINAR*/
+                                /*AÑADIR*/
 Route::post('Admin/anadirCiudad','AdministratorsController@anadirCiudad');
-Route::post('/Admin/anadirCategoria','AdministratorsController@anadirCategoria');
-Route::post('/Admin/anadirSubCategoria','AdministratorsControllerr@anadirSubCategoria');
+Route::post('Admin/anadirCategoria','AdministratorsController@anadirCategoria');
+Route::post('Admin/anadirSubCategoria','AdministratorsController@anadirSubCategoria');
 
                                 /*ELIMINAR*/
-Route::post('/Admin/eliminarCiudad','AdministratorsController@eliminarCiudad');
-Route::post('/Admin/anadirCiudad','AdministratorsController@anadirCiudad');
-Route::post('/Admin/anadirCiudad','AdministratorsController@anadirCiudad');
+Route::post('Admin/eliminarCiudad','AdministratorsController@eliminarCiudad');
+Route::post('Admin/eliminarCategoria','AdministratorsController@eliminarCategoria');
+Route::post('Admin/eliminarSubCategoria','AdministratorsController@eliminarSubCategoria');
 
 
 

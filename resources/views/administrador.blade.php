@@ -89,7 +89,7 @@
                     </p>
                  </form>
             
-                <form action="{{ asset('/Servicio/create/') }}" method="post" id="formulario_crear_categoria">
+                <form action="{{ asset('/Admin/eliminarCategoria') }}" method="post" id="formulario_eliminar_categoria">
                     @csrf
                     <p>Eliminar categoria:&nbsp&nbsp
                         <input type="text" name="categoria" placeholder="Introduce la categoria..."></input>
@@ -97,7 +97,7 @@
                     </p>
                  </form>
                 
-                <form action="{{ asset('/Servicio/create/') }}" method="post" id="formulario_crear_servicio">
+                <form action="{{ asset('/Admin/eliminarSubCategoria') }}" method="post" id="formulario_eliminar_sub_categoria">
                     @csrf
                     <p>Eliminar sub-categoria:&nbsp&nbsp
                         <input type="text" name="sub_categoria" placeholder="Introduce la sub-categoria..."></input>

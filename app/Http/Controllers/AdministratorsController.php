@@ -34,20 +34,29 @@ class AdministratorsController extends Controller
        
        
    } 
-    
-    
-    
-    
-    
-    
-    
-    
-    public function anadirCategoria(){
-        
+       
+    public function anadirCategoria(Request $request){
+        $this->validate($request, [          
+        'categoria'  =>  'required',
+        ]);
+
+      Categoria::create([
+        'nombre'  => $request->input("categoria"),
+      ]);
+
+      return view('administrador')->with('success', 'Enviado exitosamente!');
     }
     
-    public function anadirSubCategoria(){
-        
+    public function anadirSubCategoria(Request $request){
+        $this->validate($request, [          
+        'sub_categoria'  =>  'required',
+        ]);
+
+      SubCategoria::create([
+        'nombre'  => $request->input("sub_categoria"),
+      ]);
+
+      return view('administrador')->with('success', 'Enviado exitosamente!');
     }
     
                 /*ELIMINAR*/
@@ -65,12 +74,29 @@ class AdministratorsController extends Controller
        
     } 
     
-    public function eliminarCategoria(){
+    public function eliminarCategoria(Request $request){
+        $this->validate($request, [
+			'categoria' => 'required|min:1',
+		]);
+
+		$nombre = $request->get('categoria');
+		$categoria = Categoria::where('nombre', $nombre);
+		$categoria->delete();
+
+		return view('administrador')->with('success', 'Enviado exitosamente!'); 
         
     }
     
-    public function eliminarSubCategoria(){
-        
+    public function eliminarSubCategoria(Request $request){
+        $this->validate($request, [
+			'sub_categoria' => 'required|min:1',
+		]);
+
+		$nombre = $request->get('sub_categoria');
+		$sub_categoria = SubCategoria::where('nombre', $nombre);
+		$sub_categoria->delete();
+
+		return view('administrador')->with('success', 'Enviado exitosamente!'); 
     }
     
     
