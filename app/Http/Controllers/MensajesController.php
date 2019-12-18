@@ -67,4 +67,23 @@ class MensajesController extends Controller
       return back()->with('success', 'Enviado exitosamente!');
     }
 	
+	public function crearFormulario(Request $request){
+      
+		$this->validate($request,[
+		   'nombre'=>'required',
+		   'mensaje'=>'required',		   
+	   ]);
+	   
+		Mensaje::insert([
+			'emisor'=>$request->input("nombre"),
+			'receptor'=>"1",
+			'contenido'=>$request->input("mensaje"),
+			'tipo'=>"publico"
+		]);
+		
+		return back()->with('success',"Enviado");
+		
+		
+    }
+	
 }

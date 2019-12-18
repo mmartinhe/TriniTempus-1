@@ -14,6 +14,26 @@
 		<div class="title m-b-md">
 			<a id="capa" href="{{ url('/')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 250px'/></a>
 		</div>
+		
+		<p class="lead">
+
+        <a class="btn btn-info mt-2 " href="{{ asset('home') }}">Atras</a>
+        <hr> @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+        @endif
+    </p>
 		<!--  <h1>VISTA CONTACTO</h1>   -->
 		<div class="container">
 			<div class="row">
@@ -28,7 +48,7 @@
 
 				<div class="col-sm-12 col-md-6 col-lg-4  offset-3">
 					<h1>Formulario de Contacto</h1>
-					<form action="{{url('/soporte')}}" method="post" id="formulario">
+					<form action="{{url('/mensajes')}}" method="post" id="formulario">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="name">Nombre</label>
