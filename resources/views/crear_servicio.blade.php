@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-6" id="capa_crear_servicio">
                 <h2 class="titulo">Crear servicio</h2>
-                <br><br>
+                <br>
                 <form action="{{ asset('/Servicio/create/') }}" method="post" id="formulario_crear_servicio">
                     @csrf
 
@@ -48,22 +48,46 @@
                     </p>
 
                     <p>Ciudad:&nbsp&nbsp
-                        <!--<input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>-->
-        
-                        <select id="nombre_ciudad" id="nombre_ciudad" class="form-control">
-                            <option>reuniones</option>
-                            <option>salon_actos</option>
-                            <option>realidad_virtual</option>
-                            <option>parking</option>
+                       <!-- <input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>-->
+                             
+                        <select id="select_ciudad" name="ciudad"  >
+                            <option value="Selecciona ciudad"></option>
+                            @foreach($ciudades as $ciudad)
+                                                          
+                                <option id="select_ciudad" >{!! $ciudad->nombre !!}</option>
+                            
+                            @endforeach
+                            
                         </select>
+                    </p>
                     </p>
 
                     <p>Categoria:&nbsp&nbsp
-                        <input type="text" name="categoria" placeholder="Introduce la categoria..."></input>
+                        <!--<input type="text" name="categoria" placeholder="Introduce la categoria..."></input>-->
+                        
+                        <select  name="categoria" class="form-control">
+                            <option value="Selecciona categoria"></option>
+                            @foreach($categorias as $categoria)
+                                                          
+                                <option >{!! $categoria->nombre !!}</option>
+                            
+                            @endforeach
+                            
+                        </select>
                     </p>
 
                     <p>Subcategoria:&nbsp&nbsp
-                        <input type="text" name="sub_categoria" placeholder="Introduce la sub categoria..."></input>
+                        <!--<input type="text" name="sub_categoria" placeholder="Introduce la sub categoria..."></input>-->
+                        
+                        <select name="sub_categoria" class="form-control">
+                            <option value="Selecciona sub_categoria"></option>
+                            @foreach($subCategorias as $subCategoria)
+                                                          
+                                <option >{!! $subCategoria->nombre !!}</option>
+                            
+                            @endforeach
+                            
+                        </select>
                     </p>
                     <br>
                     <input type="submit" class="btn btn-info" value="Guardar" id="btnGuardar">

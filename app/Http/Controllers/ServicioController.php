@@ -4,7 +4,10 @@ namespace App\ Http\ Controllers;
 
 use Illuminate\ Http\ Request;
 use App\Servicio;
+use App\Ciudad;
 use App\MiServicio;
+use App\Categoria;
+use App\SubCategoria;
 
 class ServicioController extends Controller {
     
@@ -77,7 +80,17 @@ class ServicioController extends Controller {
     /* esta funcion muestra todos los servicios en crear_servicio*/    
     public function mostrarTodosEnCearServicio(){
         $misServicios = MiServicio::all();
-        return view('/crear_servicio')->with('misServicios',$misServicios);
+        $ciudades = Ciudad::all();
+        $categorias = Categoria::all();
+        $subCategorias = SubCategoria::all();
+        
+        
+        
+        return view('/crear_servicio', 
+                    ['ciudades' => $ciudades,
+                     'categorias' => $categorias,
+                     'subCategorias'=> $subCategorias,
+                     'misServicios' => $misServicios]);
     }
     
     /*esta funcion es para mostrar los detalles de un evento del calendario*/
