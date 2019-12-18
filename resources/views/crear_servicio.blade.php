@@ -48,7 +48,14 @@
                     </p>
 
                     <p>Ciudad:&nbsp&nbsp
-                        <input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>
+                        <!--<input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>-->
+        
+                        <select id="nombre_ciudad" id="nombre_ciudad" class="form-control">
+                            <option>reuniones</option>
+                            <option>salon_actos</option>
+                            <option>realidad_virtual</option>
+                            <option>parking</option>
+                        </select>
                     </p>
 
                     <p>Categoria:&nbsp&nbsp
