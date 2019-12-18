@@ -97,8 +97,9 @@ Route::get('crear_servicio', 'ServicioController@mostrarTodosEnCearServicio'); /
 
 //------------------------
 //RUTAS PARA SOPORTE
+Route::post('mensajes','MensajesController@crearFormulario');
 
-Route::post('/soporte', 'SoporteController@contact')->name('contact');
+//Route::post('/soporte', 'SoporteController@contact');
 
 
 //--------------------------------------------------
