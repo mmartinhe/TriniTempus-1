@@ -18,7 +18,6 @@
         <a id="capa" href="{{ url('/')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
     </div>	
 	<div class="content">
-		<img class="banner" src="img/Especializados en servicios.png">
 
 	</div>
 	        
