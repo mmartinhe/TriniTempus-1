@@ -31,6 +31,25 @@ class MensajesController extends Controller
 		return view('mi_cuenta', ['mensajes' => $mensajes->toArray()]);*/
 
 	}
+    
+     public function eliminarMensaje($id){
+             
+        //echo "llegooooooooooooooo" . $id;
+        $servicio=Mensaje::findOrFail($id);
+        $servicio->delete();
+        return back();
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 	function mostrarTodosVistaMensajes() {
         
@@ -38,6 +57,24 @@ class MensajesController extends Controller
     //return view('mensajes.index', compact('mensajes'));
     return view('mensajes')->with('mensajes',$mensajes);
 	}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	/*
 	function mostrarMensajesUsuario($id) {
     $mensajes = Mensaje::all();

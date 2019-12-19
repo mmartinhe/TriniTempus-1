@@ -11,6 +11,16 @@
     </div>
 @endif
 
+<style>
+
+#enlace{
+    font-size: 90px;
+    color: white;
+    text-decoration: none;
+}
+
+</style>
+
 <!-------------------------------------contenido---------------------------------------------->
 <div class="content">
     <div class="title m-b-md">
@@ -26,7 +36,7 @@
                             <form action="{{url('/vistaModificarMisDatos')}}" method="post" id="formulario">
                                 <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
                                 <div id="datos_usuario" class="mt-2">
-                                    <h2 class="titulo">Datos usuario</h2>
+                                    <h2 class="titulo text-white">Datos usuario</h2>
                                     
                                     <p id="id">Id:&nbsp&nbsp{{ auth()->user()->id}}</p>
                                     <p id="usuario">Usuario:&nbsp&nbsp
@@ -40,7 +50,7 @@
                                     </p>
             
                                     <div>
-                                        <input type="submit" value="Modificar datos" id="btnModificarDatos">
+                                        <input class="btn btn-info" type="submit" value="Modificar datos" id="btnModificarDatos">
                                     </div>
                                 </div>
                             </form>
@@ -54,13 +64,13 @@
                         <div id="foto">
                             <img id="foto_perfil" src='{{url(Auth::user()->avatar)}}' class='img-responsive' style='max-width: 200px'/>
                         </div>
-                        <a href="{{ url('profile')}}"><button id="btn_modificarFoto">Modificar Foto</button></a>
+                        <a href="{{ url('profile')}}"><button id="btn_modificarFoto" class="btn btn-info">Modificar Foto</button></a>
 
-                        <form action="{{url('/darseDeBaja')}}" method="post">
-                            <div>
-                                <input type="submit" value="Darse de baja" id="btnBaja">
-                            </div>
-                        </form>
+                        <form action="{{ url('darseDeBaja')}}/{{ auth()->user()->id }}"  method="post"  id="formulario_eliminar_mensaje">
+                            @csrf
+                            {{method_field('DELETE')}}
+                          <input type="submit" class="btn btn-info" value="Darse de baja" id="btnBaja" >
+                         </form>  
                     </div>
                 </div>
             </div>
@@ -69,7 +79,13 @@
             </div>
 
             <div class="col-5" id="capa_mis_servicios">
-                <h2 class="titulo">Mis servicios</h2>
+                <h2 class="titulo text-white">
+                    <a id="enlace" href="{{url('/crear_servicio')}}">
+                        crear servicios &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a> 
+                Mis servicios 
+                    <a id="enlace" href="{{url('/ofertas')}}">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ir a mi agenda</a>
+                </h2>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -78,15 +94,15 @@
                         @if ($misServicios->isEmpty())
                         <div>No hay Servicios</div>
                         @else
-                        <table id="tabla_mis_servicios" class="table table-striped ">
+                        <table id="tabla_mis_servicios" class="table table-striped table-hover ">
                             <!--table table-hover table-dark-->
                             <thead>
                                 <tr>
-                                    <th>Id_servicio</th>
-                                    <th>Id_usuario</th>
+                                    <th>ID</th>
+                                    <th>usuario</th>
                                     <th>Ciudad</th>
                                     <th>Categoria</th>
-                                    <th>Sub_categoria</th>
+                                    <th>Subcategoria</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,6 +113,15 @@
                                     <td>{!! $servicio->ciudad !!}</td>
                                     <td>{!! $servicio->categoria !!}</td>
                                     <td>{!! $servicio->sub_categoria !!}</td>
+                                    <td> 
+                                        <!--<form action="{{ url('Servicio/eliminar/'. $servicio->id)}}"  method="post" id="formulario_crear_servicio">-->
+                                        
+                                        <form action="{{ url('eliminar')}}/{{ $servicio->id }}"  method="post" id="formulario_eliminar_servicio">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                          <input type="submit" class="btn btn-info" value="eliminar" id="btnGuardar" >
+                                         </form>   
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -112,7 +137,7 @@
 
         <div class="row">
             <div class="col-5" id="capa_mensajes_recibidos">
-                <h2 class="titulo">Mensajes recibidos</h2>
+                <h2 class="titulo text-white">Mensajes recibidos</h2>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -121,7 +146,7 @@
                         @if ($mensajes->isEmpty())
                         <div>No hay Mensajes</div>
                         @else
-                        <table class="table table-striped ">
+                        <table class="table table-striped table-hover ">
                             <!--table table-hover table-dark-->
                             <thead>
                                 <tr>
@@ -140,6 +165,13 @@
                                     <td>{!! $mensaje->receptor !!}</td>
                                     <td>{!! $mensaje->contenido !!}</td>
                                     <td>{!! $mensaje->tipo !!}</td>
+                                    <td> 
+                                        <form action="{{ url('eliminarMensaje')}}/{{ $mensaje->id }}"  method="post" id="formulario_eliminar_mensaje">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                          <input type="submit" class="btn btn-info" value="eliminar" id="btnGuardar" >
+                                         </form>   
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -153,7 +185,7 @@
             </div>
 
             <div class="col-5" id="capa_mensajes_enviados">
-                <h2 class="titulo">Mensajes enviados</h2>
+                <h2 class="titulo text-white">Mensajes enviados</h2>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -162,7 +194,7 @@
                         @if ($mensajes->isEmpty())
                         <div>No hay Mensajes</div>
                         @else
-                        <table class="table table-striped ">
+                        <table class="table table-striped table-hover ">
                             <!--table table-hover table-dark-->
                             <thead>
                                 <tr>
@@ -181,6 +213,15 @@
                                     <td>{!! $mensaje->receptor !!}</td>
                                     <td>{!! $mensaje->contenido !!}</td>
                                     <td>{!! $mensaje->tipo !!}</td>
+                                    <td> 
+                                        
+                                        
+                                        <form action="{{ url('eliminarMensaje')}}/{{ $mensaje->id }}"  method="post" id="formulario_eliminar_mensaje">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                          <input type="submit" class="btn btn-info" value="eliminar" id="btnGuardar" >
+                                         </form>   
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

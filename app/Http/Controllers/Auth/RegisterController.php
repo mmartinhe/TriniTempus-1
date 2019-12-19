@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Ciudad;
+
 class RegisterController extends Controller
 {
     /*
@@ -72,5 +74,19 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    
+    public function mostrarCiudadesRegister(){
+        $ciudades = Ciudad::all();
+        
+        return view('auth.register', 
+                    ['ciudades' => $ciudades,
+                                            ]);
+        
+        //echo "llegooooo";
+        
+        /*return view('/register')->with('ciudades',$ciudades);*/
+        
+  
     }
 }

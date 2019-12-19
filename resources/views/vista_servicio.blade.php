@@ -25,6 +25,9 @@
                     
                     <h2 class="titulo">Datos del servicio</h2>
                     
+                    <form action="{{ url('borrarEventos')}}/{{ $servicio->id }}" method="post" id="formulario_crear_evento">
+                    @csrf
+                    
                     <p >Id servicio:&nbsp&nbsp{{ $servicio->id }}</p>
                     
                     <p >Titulo:&nbsp&nbsp
@@ -53,7 +56,10 @@
 
                     <p>Hora:&nbsp&nbsp
                         <input name="hora" placeholder="{{ $servicio->hora }}"></input>
-                    </p>              
+                    </p>
+                    <hr>
+                    <input type="submit" class="btn btn-info" value="Borrar" id="btnBorrar">
+                </form>
                 </div>
                 <div class="col-md-3">
                 </div>

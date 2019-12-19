@@ -109,8 +109,34 @@
 <!--AQUI AÑADIR AÑADIR CAMPO PARA BUSCAR USUARIO POR ID Y 
                                 APARECEN LOS DATOS EN TABLA PASAR A MODIFICAR DATOS Y ELIMINAR USUARIO-->
             </div>
-        </div>            
-    </div><!--content-->
+        </div> 
+<br><hr><br>
+            <div class="row bg-primary">
+                
+                <div class="col-6 bg-success">
+                
+                    <form action="{{ asset('/Admin/BuscarUsuario') }}" method="post" id="formulario_buscar_usuario">
+                    @csrf
+                    <p>Buscar usuario:&nbsp&nbsp
+                        <input type="text" name="id" placeholder="Introduce la ciudad..."></input>
+                        <input type="submit" class="btn btn-info" value="Eliminar" id="btnEliminar">
+                    </p>
+                 </form>
+                
+                </div>
+
+                <div class="col-6 bg-success">
+
+                    
+                
+                </div>
+
+
+
+            </div>
+        
+    </div><!--container-->
+</div><!--content-->
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

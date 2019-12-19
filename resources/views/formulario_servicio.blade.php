@@ -55,15 +55,42 @@
                     </p>
                                     
                     <p>Ciudad:&nbsp&nbsp
-                        <input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>
+                        <!--<input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>-->
+                        <select  name="ciudad"  class="form-control-sm" >
+                            <option value="Selecciona ciudad"></option>
+                            @foreach($ciudades as $ciudad)
+                                                          
+                                <option>{!! $ciudad->nombre !!}</option>
+                            
+                            @endforeach
+                            
+                        </select>
                     </p>
                     
                     <p >Categoria:&nbsp&nbsp
-                        <input type="text" name="categoria" placeholder="Introduce la categoria..."></input>
+                        <!--<input type="text" name="categoria" placeholder="Introduce la categoria..."></input>-->
+                        <select  name="categoria" class="form-control-sm">
+                            <option value="Selecciona categoria"></option>
+                            @foreach($categorias as $categoria)
+                                                          
+                                <option >{!! $categoria->nombre !!}</option>
+                            
+                            @endforeach
+                            
+                        </select>
                     </p>
 
                     <p >Subcategoria:&nbsp&nbsp
-                        <input type="text" name="sub_categoria" placeholder="Introduce la sub categoria..."></input>
+                        <!--<input type="text" name="sub_categoria" placeholder="Introduce la sub categoria..."></input>-->
+                        <select name="sub_categoria" class="form-control-sm">
+                            <option value="Selecciona sub_categoria"></option>
+                            @foreach($subCategorias as $subCategoria)
+                                                          
+                                <option >{!! $subCategoria->nombre !!}</option>
+                            
+                            @endforeach
+                            
+                        </select>
                     </p>
 
                     <p >Fecha:&nbsp&nbsp

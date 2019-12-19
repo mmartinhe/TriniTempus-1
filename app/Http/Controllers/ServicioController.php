@@ -13,8 +13,20 @@ class ServicioController extends Controller {
     
     
     public function form(){
-      return view("formulario_servicio");
+      $misServicios = MiServicio::all();
+        $ciudades = Ciudad::all();
+        $categorias = Categoria::all();
+        $subCategorias = SubCategoria::all();
+        
+        
+        
+        return view('/formulario_servicio', 
+                    ['ciudades' => $ciudades,
+                     'categorias' => $categorias,
+                     'subCategorias'=> $subCategorias,
+                     'misServicios' => $misServicios]);
     }
+
 
     /*esta funcion crea un evento en el calendario*/
     
@@ -41,6 +53,28 @@ class ServicioController extends Controller {
       ]);
 
       return back()->with('success', 'Enviado exitosamente!');
+
+    }
+    
+    public function borrarEventos($id){
+        //echo "llegoooooo" . $id;
+        $servicio=Servicio::findOrFail($id);
+        $servicio->delete();
+        //return back();
+        
+        $month = date("Y-m");
+       //
+       $data = $this->calendar_month($month);
+       $mes = $data['month'];
+       // obtener mes en espanol
+       $mespanish = $this->spanish_month($mes);
+       $mes = $data['month'];
+
+       return view("calendario",[
+         'data' => $data,
+         'mes' => $mes,
+         'mespanish' => $mespanish
+       ]);
 
     }
     
@@ -77,6 +111,22 @@ class ServicioController extends Controller {
         return view('/welcome')->with('misServicios',$misServicios);
     }
     
+     /* esta funcion muestra todos los servicios en formulario_evento*/    
+    public function mostrarTodosEnCearEventos(){
+        $misServicios = MiServicio::all();
+        $ciudades = Ciudad::all();
+        $categorias = Categoria::all();
+        $subCategorias = SubCategoria::all();
+        
+        
+        
+        return view('/crear_servicio', 
+                    ['ciudades' => $ciudades,
+                     'categorias' => $categorias,
+                     'subCategorias'=> $subCategorias,
+                     'misServicios' => $misServicios]);
+    }
+    
     /* esta funcion muestra todos los servicios en crear_servicio*/    
     public function mostrarTodosEnCearServicio(){
         $misServicios = MiServicio::all();
@@ -93,10 +143,24 @@ class ServicioController extends Controller {
                      'misServicios' => $misServicios]);
     }
     
+    
+    public function eliminarServicio($id){
+             
+        //echo "llegooooooooooooooo" . $id;
+        $servicio=MiServicio::findOrFail($id);
+        $servicio->delete();
+        return back();
+    
+    }
+    
+    
+    
+    
+    
+    
     /*esta funcion es para mostrar los detalles de un evento del calendario*/
     public function details($id){
-        
-        //echo "llegooooo" . $id_servicio;
+
 
       $servicio = Servicio::find($id);
 

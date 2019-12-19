@@ -17,6 +17,8 @@ use App\SubCategoria;
 class AdministratorsController extends Controller
 {
      use AuthenticatesUsers;
+    
+     
 /*--------------------------------funciones gestiones administrador---------------------------------------------*/    
                 /*ELIMINAR*/
    public function anadirCiudad(Request $request){

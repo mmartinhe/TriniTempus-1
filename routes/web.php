@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
+/*Route::get('/register', 'RegisterController@mostrarCiudadesRegister');*/ //MOSTRARLOS EN VISTA CREAR SERVICIOS
+
+
+
 //--------------------------------------------------
 //RUTAS PARA LOS CAMBIOS DE VISTA 
 
@@ -49,7 +53,7 @@ Route::post('/vistaModificarMisDatos', 'UsuariosController@vistaModificarMisDato
 Route::post('/modificarMisDatos', 'UsuariosController@modificarMisDatos');
 //--------------------------------------------------
 //RUTA PARA DARSE DE BAJA
-Route::post('/darseDeBaja', 'UsuariosController@darseDeBaja');
+Route::delete('darseDeBaja/{id}', 'UsuariosController@darseDeBaja');
 //----------------------------------------
 //RUTAS PARA MULTIMEDIA
 
@@ -65,6 +69,7 @@ Route::get('mi_cuenta', 'MensajesController@mostrarTodos');
 Route::get('mensajes', 'MensajesController@mostrarTodosVistaMensajes');
 Route::post('mensajes','MensajesController@crearMensaje');
 //Route::get('mensajes', 'UsuariosController@');
+Route::delete('eliminarMensaje/{id}','MensajesController@eliminarMensaje');
 
 //--------------------------------------------------
 //RUTAS DEL CALENDARIO
@@ -78,19 +83,19 @@ Route::get('Evento/details/{id}','ServicioController@details');
 Route::get('ofertas','ServicioController@index');
 Route::get('Evento/index/{month}','ServicioController@index_month');
 Route::post('Evento/calendario','ServicioController@calendario');
-
+Route::get('crear_servicio', 'ServicioController@mostrarTodosEnCearEventos');
+Route::post('borrarEventos/{id}','ServicioController@borrarEventos');
 //--------------------------------------------------
 //RUTAS PARA LOS SERVICIOS OFRECIDOS POR UN USUARIO
 Route::post('Servicio/create','ServicioController@createServicio');
-
+Route::delete('eliminar/{id}','ServicioController@eliminarServicio');
 //--------------------------------------------------
 //RUTAS PARA MOSTRAR LOS SERVICIOS OFRECIDOS POR UN USUARIO EN MI CUENTA
 /*Route::get('mi_cuenta', 'ServicioController@mostrarTodos');*/
 Route::get('/', 'ServicioController@mostrarTodosEnWelcome'); //MOSTRARLOS EN WELCOME
 // va a petar cuando le pase los ultimos servicios 
-//como en mi cuenta al pasarle mensajes, y servicios PREGUNTAAAA!!!
 
-Route::get('crear_servicio', 'ServicioController@mostrarTodosEnCearServicio'); //MOSTRARLOS EN VISTA CREAR SERVICIOS
+
 
 //--------------------------------------------------
 //RUTAS PARA BUSCADOR

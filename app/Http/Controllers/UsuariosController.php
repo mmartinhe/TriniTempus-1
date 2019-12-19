@@ -8,6 +8,7 @@ use Validator;
 use App\User;
 use Auth;
 use Illuminate\Support\Str;
+use App\MiServicio;
 
 class UsuariosController extends Controller {
 
@@ -19,8 +20,7 @@ class UsuariosController extends Controller {
         return view( 'mi_cuenta' );
     }
 
-    public
-    function vistaModificarMisDatos() {
+    public function vistaModificarMisDatos() {
         return view( '/vista_modificar' );
     }
 
@@ -78,6 +78,9 @@ class UsuariosController extends Controller {
             return redirect( 'mi_cuenta' )->with( 'status' );
         }
     }
+    
+   
+    
 
     /**
      * Remove the specified resource from storage.
@@ -86,11 +89,20 @@ class UsuariosController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function darseDeBaja( $id ) {
-/*        $usuario = User::find( $request->id );*/
+
         
-         echo "llegoooo";
-        
+         //echo "llegoooo" . $id;
+        $usuario=User::findOrFail($id);
+        $usuario->delete();
+        $misServicios = MiServicio::all();
+        return view('auth.register',[
+                     'misServicios' => $misServicios]);
     }
+    
+    
+    
+        
+    }//-->cierre controlador
     
 	/*
 	public function saberID($request){
@@ -99,10 +111,3 @@ class UsuariosController extends Controller {
 		return view('mensajes')->with('id',$usuario);
 	}*/
 	
-    
-    
-    
-    
-    
-    
-}

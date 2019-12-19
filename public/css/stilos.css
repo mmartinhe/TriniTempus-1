@@ -148,8 +148,8 @@ p {
 #capa_registro {
     position: absolute;
     background-color: #A29080;
-    width: 350px;
-    height: 370px;
+    width: 370px;
+    height: 390px;
     border-radius: 20px;
     margin-left: -100px;
     margin-top: 20px;
@@ -295,6 +295,10 @@ input {
 #navbarDropdown {
     color: white;
 }
+
+#enlace{
+    font-size: 10px;
+}
 /*---------------------vista cambiar foto de perfil---------------------------------*/
 #btnActualizar {
     border-radius: 20px;
@@ -403,18 +407,16 @@ label{
     margin-left:275px;
     opacity: 0.8;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 600px;
     
 }
 
 #tabla_mis_servicios_crear{
     
-
+    margin-left:110px;
 }
 
-#select_ciudad{
-    width: 20px;
-    height: 100px;
-}
+
 
 
 

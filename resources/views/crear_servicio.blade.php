@@ -8,6 +8,18 @@
         <a href="{{ route('register') }}">Registrarse</a> @endif @endauth
     </div>
 @endif
+
+<style>
+#capa_mis_servicios_crear{
+
+ width: 700px;
+    
+}
+    
+
+
+
+</style>
 <!-------------------------------------contenido---------------------------------------------->
 <div class="content">
     <div class="title m-b-md">
@@ -32,13 +44,13 @@
         @endif
     </p>
 
-    <div class="container ">
+    <div class="container-fluid ">
 
         <div class="row">
             <div class="col-md-3">
             </div>
             <div class="col-md-6" id="capa_crear_servicio">
-                <h2 class="titulo">Crear servicio</h2>
+                <h2 class="titulo text-white">Crear servicio</h2>
                 <br>
                 <form action="{{ asset('/Servicio/create/') }}" method="post" id="formulario_crear_servicio">
                     @csrf
@@ -50,22 +62,22 @@
                     <p>Ciudad:&nbsp&nbsp
                        <!-- <input type="text" name="ciudad" placeholder="Introduce la ciudad..."></input>-->
                              
-                        <select id="select_ciudad" name="ciudad"  >
+                        <select  name="ciudad"  class="form-control-sm" >
                             <option value="Selecciona ciudad"></option>
                             @foreach($ciudades as $ciudad)
                                                           
-                                <option id="select_ciudad" >{!! $ciudad->nombre !!}</option>
+                                <option>{!! $ciudad->nombre !!}</option>
                             
                             @endforeach
                             
                         </select>
                     </p>
-                    </p>
+                    
 
                     <p>Categoria:&nbsp&nbsp
                         <!--<input type="text" name="categoria" placeholder="Introduce la categoria..."></input>-->
                         
-                        <select  name="categoria" class="form-control">
+                        <select  name="categoria" class="form-control-sm">
                             <option value="Selecciona categoria"></option>
                             @foreach($categorias as $categoria)
                                                           
@@ -79,7 +91,7 @@
                     <p>Subcategoria:&nbsp&nbsp
                         <!--<input type="text" name="sub_categoria" placeholder="Introduce la sub categoria..."></input>-->
                         
-                        <select name="sub_categoria" class="form-control">
+                        <select name="sub_categoria" class="form-control-sm">
                             <option value="Selecciona sub_categoria"></option>
                             @foreach($subCategorias as $subCategoria)
                                                           
@@ -98,12 +110,11 @@
         </div>
         <hr>
         <!--segunda fila donde se van a mostrar los servicios--> 
-        <div class="row-fluid ">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6" id="capa_mis_servicios_crear" >
+        <div class="row ">
+            
+            <div class="col-md-8" id="capa_mis_servicios_crear" >
                 <br><br>
-                <h2 class="titulo">Mis servicios</h2>
+                <h2 class="titulo text-white">Mis servicios</h2>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -112,7 +123,7 @@
                         @if ($misServicios->isEmpty())
                         <div>No hay Servicios</div>
                         @else
-                        <table id="tabla_mis_servicios_crear" class="table table-striped ">
+                        <table id="tabla_mis_servicios_crear" class="table table-striped table-hover ">
                             <!--table table-hover table-dark-->
                             <thead>
                                 <tr>
@@ -125,13 +136,26 @@
                             </thead>
                             <tbody>
                                 @foreach($misServicios as $servicio)
+                               
+                                    
                                 <tr>
+                                    
                                     <td>{!! $servicio->id !!}</td>
                                     <td>{!! $servicio->id_usuario !!}</td>
                                     <td>{!! $servicio->ciudad !!}</td>
                                     <td>{!! $servicio->categoria !!}</td>
                                     <td>{!! $servicio->sub_categoria !!}</td>
+                                    <td> 
+                                        <!--<form action="{{ url('Servicio/eliminar/'. $servicio->id)}}"  method="post" id="formulario_crear_servicio">-->
+                                        
+                                        <form action="{{ url('eliminar')}}/{{ $servicio->id }}"  method="post" id="formulario_eliminar_servicio">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                          <input type="submit" class="btn btn-info" value="eliminar" id="btnGuardar" >
+                                         </form>   
+                                    </td>
                                 </tr>
+                                    
                                 @endforeach
                             </tbody>
                         </table>
@@ -140,8 +164,7 @@
                 </div>
                 
             </div>
-            <div class="col-md-3">
-            </div>
+            
         </div>
     </div>
     <!-- /container -->
