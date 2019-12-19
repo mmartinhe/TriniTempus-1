@@ -117,15 +117,15 @@
                 
                     <form action="{{ url('BuscarUsuarios') }}" method="post" id="formulario_buscar_usuarios">
                     @csrf
-                    <p>Buscar usuario:&nbsp&nbsp
-                        <input type="text" name="id" placeholder="Introduce la ciudad..."></input>
+                    <p>Buscar usuarios:&nbsp&nbsp
+                        
                         <input type="submit" class="btn btn-info" value="Eliminar" id="btnEliminar">
                     </p>
                  </form>
                 
                 </div>
 
-                <div class="col-6 bg-success">
+                <div class="col-6 ">
 
                     <div class="panel panel-default">
                         <div class="panel-heading">

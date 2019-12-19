@@ -41,7 +41,7 @@
             <div class="row-sm-12" id="datos_contacto">
                 <h5 id="usuario">Usuario a buscar 	
                     <input type="text" style="width: 400px"name="textoBuscar" </input>
-                    <input type="button" name="botonPulsar" value="Buscar" </input>
+                    
 					</h5>
 				<br>
             </div>
