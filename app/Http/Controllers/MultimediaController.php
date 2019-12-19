@@ -9,7 +9,19 @@ class MultimediaController extends Controller
 {
 	
     public function updateMultimedia( Request $request ) {
-       $request->file('archivo')->storeAs('img',[request()->file('archivo')]);
-        ("subido y guardado");
+       if($request->hasFile('avatar')){
+		    $file=$request->file('avatar');
+		   $name=time().$file->getClientOriginalName();
+		   $file->move(public_path().'/../public/img_multimedia',$name);
+	   }/*
+		$multimedia=new Multimedia();
+		$multimedia->avatar=$name;
+		$multimedia->name='lo subi yo andele';
+		$multimedia->save();*/
+		
+		return back()->with('success', 'Enviado exitosamente!');
+		
+		
+		
     }
 }

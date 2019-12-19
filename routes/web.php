@@ -57,7 +57,8 @@ Route::delete('darseDeBaja/{id}', 'UsuariosController@darseDeBaja');
 //----------------------------------------
 //RUTAS PARA MULTIMEDIA
 
-Route::get('/subir','MultimediaController@updateMultimedia');
+//Route::get('/subir','MultimediaController@updateMultimedia');
+Route::post('/multimedia','MultimediaController@updateMultimedia');
 
 //---------------------------------------
 //RUTAS DE FOTO DE PERFIL
