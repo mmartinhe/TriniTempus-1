@@ -16,6 +16,7 @@
 <div class="content ">
     <div class="title m-b-md">
         <a id="capa" href="{{ url('/')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
+		<h1 class="container">¡Una web especializada en servicios!</h1>
     </div>	
 	<div class="content">
 

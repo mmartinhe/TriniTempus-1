@@ -13,7 +13,7 @@
     <div class="title m-b-md">
         <a id="capa" href="{{ url('home')}}"><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
     </div>
-    <h1>Tus mensajes</h1>
+    <h1>¡Chatea con otros usuarios!</h1>
     <div class="col-sm-12">
 		
 		<p class="lead">
@@ -35,27 +35,32 @@
         </div>
         @endif
     </p>
-        <form action="{{ asset('/mensajes') }}" method="post" id="crearMensaje">
+		
+        <form class="row offset-1" action="{{ asset('/mensajes') }}" method="post" id="crearMensaje">
             <input type="hidden" name="_token" id="csrf-token" value="{{Session::token()}}">
             <div class="row-sm-12" id="datos_contacto">
-                <p id="usuario">Usuario a buscar:&nbsp&nbsp
-                    <input type="text" name="textoBuscar" </input>
+                <h5 id="usuario">Usuario a buscar 	
+                    <input type="text" style="width: 400px"name="textoBuscar" </input>
                     <input type="button" name="botonPulsar" value="Buscar" </input>
-                </p>
+					</h5>
+				<br>
             </div>
-            <div class="row-sm-12">
-                <p>Servivios del usuario:&nbsp&nbsp</p>
-                <textarea name="servicios" id="textAreaServicios"></textarea>
+            <div class="col-6 offset">
+                <h5>Servicios del usuario
+                <input style="width: 400px"name="servicios"></input>
+			</h5>
             </div>
 
-            <div class="row-sm-12">
-                <p id="consulta">Consulta:&nbsp&nbsp</p>
-                <textarea name="mensaje"> </textarea>
+            <div class="col-6 content">
+                <h4 id="consulta"></h4>
+
+                <input name="mensaje" id="textAreaServicios"> </input>
                 <br>
+				<br>				
                 <input type="radio" name="tipo" checked>publico</input>
-                <br>
                 <input type="radio" name="tipo">privado</input>
                 <br>
+				<br>
                 <input type="submit" class="btn btn-info" name="botonEnviar" value="Enviar"></input>
             </div>
         </form>

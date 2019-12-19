@@ -102,7 +102,7 @@ Route::get('/', 'ServicioController@mostrarTodosEnWelcome'); //MOSTRARLOS EN WEL
 
 //------------------------
 //RUTAS PARA SOPORTE
-Route::post('mensajes','MensajesController@crearFormulario');
+//Route::post('mensajes','MensajesController@crearFormulario');
 
 //Route::post('/soporte', 'SoporteController@contact');
 
