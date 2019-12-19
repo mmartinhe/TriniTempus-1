@@ -108,7 +108,7 @@ class AdministratorsController extends Controller
                     ['usuarios' => $usuarios,
                      ]);
         
-        //echo "llegooooooooooooooooooooo";
+       // echo "llegooooooooooooooooooooo";
     }
     
     
