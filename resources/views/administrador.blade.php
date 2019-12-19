@@ -119,7 +119,7 @@
                     @csrf
                     <p>Buscar usuarios:&nbsp&nbsp
                         
-                        <input type="submit" class="btn btn-info" value="Eliminar" id="btnEliminar">
+                        <input type="submit" class="btn btn-info" value="Buscar" id="btnEliminar">
                     </p>
                  </form>
                 

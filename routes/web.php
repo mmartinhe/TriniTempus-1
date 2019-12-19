@@ -127,9 +127,10 @@ Route::post('Admin/eliminarCiudad','AdministratorsController@eliminarCiudad');
 Route::post('Admin/eliminarCategoria','AdministratorsController@eliminarCategoria');
 Route::post('Admin/eliminarSubCategoria','AdministratorsController@eliminarSubCategoria');
 
-Route::post('BuscarUsuarios','AdministratorsController@BuscarUsuarios');
-Route::delete('eliminarUsuario','AdministratorsController@eliminarUsuario');
 
+Route::post('admins/area','AdministratorsController@BuscarUsuarios');
+Route::delete('eliminarUsuario','AdministratorsController@eliminarUsuario');
+Route::post('BuscarUsuarios','AdministratorsController@BuscarUsuarios');
 
 
 
