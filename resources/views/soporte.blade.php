@@ -52,15 +52,15 @@
 
 				<div class="col-sm-12 col-md-6 col-lg-4  offset-3">
 					<h1>Formulario de Contacto</h1>
-					<form action="{{url('/mensajes')}}" method="post" id="formulario">
+					<form action="{{url('/soporte')}}" method="post" id="formulario">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="name">Nombre</label>
-						<input name="name" type="text">
+						<input name="nombre" type="text">
 					</div>
 					<div class="form-group">
 						<label for="name">Mensaje</label>
-												<input name="msg" type="text">
+												<input name="mensaje" type="text">
 					</div>
 					<div class="form-group">
 						<button type="submit" id='btn-contact' class="btn">Enviar</button>
