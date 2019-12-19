@@ -23,28 +23,26 @@
   <input type="file" name="archivo" required>
   <input class="btn btn-success" type="submit" value="Enviar" >
 </form>-->
-					 
-                          
-	</row>	
-		<row class="col-3 offset-1">
-				<input type="button" value="ver mis archivos" name=btnVerArchivo>
-	</row>	
-		
 		
 		
 	</div>
 	
 	<div>
 	<row class="col-3">
-				<h1>PARTE DE GALERIA CUADRADO</h1>
 		<form method="post" action="{{ asset('/multimedia') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 			@csrf
 		<div>
 			<label for="">Imagen</label>	
 			<input type="file" name="avatar">
-  			<input class="btn btn-success" type="submit" value="Enviar" >
-		
+  			<input class="btn btn-success" type="submit" value="Enviar" >	
+			<h1>Galeria de imágenes</h1>
 		</div>
+			<div class="content" >
+				<img style="max-height:200px" src="img_multimedia/1576757101cocinera.jpg">	
+				<img style="max-height:200px" src="img_multimedia/1576757117jardinero.jpg">			
+				<img style="max-height:200px" src="img_multimedia/1576757157barbero.jpg">			
+													
+</div>
 		</form>
 	</row>	
 	</div>
