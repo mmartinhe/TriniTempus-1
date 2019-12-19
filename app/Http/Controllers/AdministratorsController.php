@@ -101,6 +101,15 @@ class AdministratorsController extends Controller
 		return view('administrador')->with('success', 'Enviado exitosamente!'); 
     }
     
+     public function BuscarUsuarios(){
+         $usuarios = User::all();
+
+        return view('administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
+        
+        //echo "llegooooooooooooooooooooo";
+    }
     
     
     

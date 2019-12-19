@@ -43,12 +43,12 @@
             <a id="capa" ><img  src="{{ asset('img/logo.png')}}" style='max-width: 180px'/></a>
         </div>
         
-        <div class="container-fluid tex-center py-auto bg-primary ">
+        <div class="container-fluid tex-center py-auto ">
             <h2 class="titulo tex-center">Administrar sitio</h2>
             
             
         <div class="row">
-            <div class="col-6 bg-success " id="capa_añadir">
+            <div class="col-6  " id="capa_añadir">
                 <h2 class="titulo tex-center">Añadir al sitio</h2>
                  
                 <form action="{{ url('/Admin/anadirCiudad') }}" method="post" id="formulario_crear_ciudad">
@@ -78,7 +78,7 @@
             </div>
 
 
-            <div class="col-6 bg-success" id="capa_eliminar">
+            <div class="col-6 " id="capa_eliminar">
                 <h2 class="titulo tex-center">Eliminar del sitio</h2>
                 
                 <form action="{{ asset('/Admin/eliminarCiudad') }}" method="post" id="formulario_eliminar_ciudad">
@@ -111,11 +111,11 @@
             </div>
         </div> 
 <br><hr><br>
-            <div class="row bg-primary">
+            <div class="row ">
                 
-                <div class="col-6 bg-success">
+                <div class="col-6 ">
                 
-                    <form action="{{ asset('/Admin/BuscarUsuario') }}" method="post" id="formulario_buscar_usuario">
+                    <form action="{{ url('BuscarUsuarios') }}" method="post" id="formulario_buscar_usuarios">
                     @csrf
                     <p>Buscar usuario:&nbsp&nbsp
                         <input type="text" name="id" placeholder="Introduce la ciudad..."></input>
@@ -127,7 +127,47 @@
 
                 <div class="col-6 bg-success">
 
-                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        @if ($usuarios->isEmpty())
+                        <div>No hay usuarios</div>
+                        @else
+                        <table id="tabla_mis_servicios" class="table table-striped table-hover ">
+                            <!--table table-hover table-dark-->
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Ciudad</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($usuarios as $usuario)
+                                <tr>
+                                    <td>{!! $usuario->id !!}</td>
+                                    <td>{!! $usuario->name !!}</td>
+                                    <td>{!! $usuario->apellidos !!}</td>
+                                    <td>{!! $usuario->ciudad !!}</td>
+                                    <td>{!! $usuario->email !!}</td>
+                                    <td> 
+                                        
+                                        
+                                        <form action="{{ url('eliminarUsuario')}}/{{ $usuario->id }}"  method="post" id="usuario">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                          <input type="submit" class="btn btn-info" value="eliminar" id="btnGuardar" >
+                                         </form>   
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @endif
+                    </div>
                 
                 </div>
 
