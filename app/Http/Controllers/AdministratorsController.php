@@ -31,8 +31,14 @@ class AdministratorsController extends Controller
       Ciudad::create([
         'nombre'  => $request->input("ciudad"),
       ]);
+       
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-      return view('administrador')->with('success', 'Enviado exitosamente!');
+      //return view('administrador')->with('success', 'Enviado exitosamente!');
        
        
    } 
@@ -45,9 +51,18 @@ class AdministratorsController extends Controller
       Categoria::create([
         'nombre'  => $request->input("categoria"),
       ]);
+        
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-      return view('administrador')->with('success', 'Enviado exitosamente!');
+      //return view('administrador')->with('success', 'Enviado exitosamente!');
     }
+    
+    
+    
     
     public function anadirSubCategoria(Request $request){
         $this->validate($request, [          
@@ -57,8 +72,14 @@ class AdministratorsController extends Controller
       SubCategoria::create([
         'nombre'  => $request->input("sub_categoria"),
       ]);
+        
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-      return view('administrador')->with('success', 'Enviado exitosamente!');
+      //return view('administrador')->with('success', 'Enviado exitosamente!');
     }
     
                 /*ELIMINAR*/
@@ -71,8 +92,14 @@ class AdministratorsController extends Controller
 		$nombre = $request->get('ciudad');
 		$ciudad = Ciudad::where('nombre', $nombre);
 		$ciudad->delete();
+         
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-		return view('administrador')->with('success', 'Enviado exitosamente!'); 
+		//return view('administrador')->with('success', 'Enviado exitosamente!'); 
        
     } 
     
@@ -84,8 +111,14 @@ class AdministratorsController extends Controller
 		$nombre = $request->get('categoria');
 		$categoria = Categoria::where('nombre', $nombre);
 		$categoria->delete();
+        
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-		return view('administrador')->with('success', 'Enviado exitosamente!'); 
+		//return view('administrador')->with('success', 'Enviado exitosamente!'); 
         
     }
     
@@ -97,8 +130,14 @@ class AdministratorsController extends Controller
 		$nombre = $request->get('sub_categoria');
 		$sub_categoria = SubCategoria::where('nombre', $nombre);
 		$sub_categoria->delete();
+        
+        $usuarios = User::all();
+        
+        return view('/administrador', 
+                    ['usuarios' => $usuarios,
+                     ]);
 
-		return view('administrador')->with('success', 'Enviado exitosamente!'); 
+		//return view('administrador')->with('success', 'Enviado exitosamente!'); 
     }
     
     public function BuscarUsuarios(){
@@ -108,7 +147,7 @@ class AdministratorsController extends Controller
                     ['usuarios' => $usuarios,
                      ]);
         
-        echo "llegooooooooooooooooooooo";
+        //echo "llegooooooooooooooooooooo";
     }
     
     
